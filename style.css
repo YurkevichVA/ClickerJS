@@ -1,0 +1,138 @@
+body
+{
+    cursor: url(./images/cursor.png), default;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: none;
+}
+::selection
+{
+    color: blueviolet;
+}
+.screen
+{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-image: url(./images/bg.jpg);
+}
+.spaceship
+{
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    top: calc(100% - 300px);
+    left: calc(50% - 125px);
+    background-size: cover;
+    background-image: url(./images/spaceship.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.progress
+{
+    height: 15px;
+    margin-top: -10px;
+    border-radius: 20px;
+    border: 2px solid rgb(138, 0, 0);
+}
+.progress::-moz-progress-bar
+{
+    border-radius: 20px;
+    background-color: brown;
+}
+.progress::-webkit-progress-bar
+{
+    border-radius: 20px;
+    background-color: rgb(112, 90, 90);
+}
+.progress::-webkit-progress-value
+{
+    border-radius: 20px;
+    background-color: brown;
+}
+.meteorit
+{
+    height: 150px;
+    width: 150px;
+    clip-path: polygon(43% 14%, 65% 13%, 83% 25%, 93% 51%, 75% 74%, 55% 86%, 20% 87%, 10% 78%, 5% 54%, 19% 26%);
+    background-size: cover;
+    background-image: url(./images/meteorit.png);
+}
+@keyframes meteorit-anim {
+    0% {
+        
+    }
+    100% {
+        top: calc(100% - 400px);
+        left: calc(50% - 75px);
+    }
+}
+
+.destroyed
+{
+    display: none;
+}
+
+div.gameOver 
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.575);
+    display: none;
+}
+
+label.gameOver 
+{
+    animation: gameOver-anim 2s linear forwards;
+}
+
+@keyframes gameOver-anim {
+    0%
+    {
+        color: rgba(165, 42, 42, 0);
+        font-size: 0px;
+    }
+    100%
+    {
+        color: brown;
+        font-size: 100px;
+    }
+}
+
+div.levelLabel 
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.575);
+    display: none;
+}
+
+label.levelLabel 
+{
+    animation: gameOver-anim 2s linear forwards;
+}
+
+@keyframes gameOver-anim {
+    0%
+    {
+        color: rgba(165, 42, 42, 0);
+        font-size: 0px;
+    }
+    100%
+    {
+        color: brown;
+        font-size: 100px;
+    }
+}

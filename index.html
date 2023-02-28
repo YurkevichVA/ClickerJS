@@ -2,11 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <script src="./js/main.js" type="module"></script>
+    <div class="screen">
+        <div id="id_spaceship" class="spaceship">
+            <progress id="playerHealthbar" class="progress" max="200" value="200"></progress>
+        </div>
+        <div class="gameOver" id="gameOverScreen">
+            <label class="gameOver">GAME OVER</label>
+        </div>
+        <div class="levelLabel" id="levelLabel">
+            <label class="levelLabel" id="textLevelLabel">LEVEL 1</label>
+        </div>
+        <!-- <section id="lvl1">
+            <div id='id-m-s1' class="m-s1">
+                <progress id="id_m-s-1" class="progress" max="100" value="100"> 100% </progress>
+                <div id="id_meteorit-s1" class="meteorit"></div>
+            </div>
+            <div id='id-m-s2' class="m-s2">
+                <progress id="id_m-s-2" class="progress" max="100" value="100"> 100% </progress>
+                <div id="id_meteorit-s2" class="meteorit"></div>
+            </div>
+            <div id='id-m-s3' class="m-s3">
+                <progress id="id_m-s-3" class="progress" max="100" value="100"> 100% </progress>
+                <div id="id_meteorit-s3" class="meteorit"></div>
+            </div>
+        </section> -->
+        <!-- <section id="lvl2">
+            <div id="id_meteorit-s" class="meteorit m-s3"></div>
+            <div id="id_meteorit-s" class="meteorit m-s1"></div>
+            <div id="id_meteorit-s" class="meteorit m-s2"></div>
+            <div id="id_meteorit-m" class="meteorit m-m1"></div>
+        </section>
+        <section id="lvl3">
+            <div id="id_meteorit-m" class="meteorit m-m1"></div>
+            <div id="id_meteorit-m" class="meteorit m-m2"></div>
+            <div id="id_meteorit-m" class="meteorit m-m3"></div>
+        </section> -->
+    </div>
 </body>
+    <script src="./main.js" type="module"></script>
 </html>
