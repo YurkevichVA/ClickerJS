@@ -1,5 +1,7 @@
 "use strict";
 
+localStorage.clear();
+
 const gameOverScreen = document.getElementById("gameOverScreen");
 const levelLabel = document.getElementById("levelLabel");
 const levelLabelText = document.getElementById("textLevelLabel");
