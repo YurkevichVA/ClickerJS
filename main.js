@@ -1,6 +1,6 @@
 "use strict";
 
-localStorage.clear();
+//localStorage.clear();
 
 const gameOverScreen = document.getElementById("gameOverScreen");
 const levelLabel = document.getElementById("levelLabel");
