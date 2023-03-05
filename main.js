@@ -6,9 +6,20 @@ window["player"] = new Spaceship();     // Spaceship is an object that contains 
 // Import modules
 import {Game} from "./classes/Game.js";
 import {Spaceship} from "./classes/Spaceship.js";
- import {clearLS} from "./functions/clearLocalStorage.js";
+import {clearLS} from "./functions/clearLocalStorage.js";
 
- clearLS();
+clearLS();
 
-// Start game loop
-game.gameLoop();
+document.getElementById('button-load').addEventListener('click', event => {
+    document.getElementById('load-screen').classList.add('del');
+    document.getElementById('menu-screen').classList.remove('del');
+
+});
+
+document.getElementById('play-id').addEventListener('click', event => {
+    document.getElementById('menu-screen').classList.add('del');
+    // Start game loop
+    game.gameLoop();
+});
+
+

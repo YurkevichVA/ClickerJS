@@ -1,0 +1,53 @@
+.menu-screen
+{
+    z-index: 98;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+.menu-bg
+{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./menu-bg.gif);
+}
+.menu-gamename
+{
+    cursor: pointer;
+    position: absolute;
+    width: 100vw;
+    margin-top: 5vh;
+    text-align: center;
+    font-family: 'Righteous';
+    font-size: 180pt;
+    color: rgb(245, 239, 239);
+}
+.menu-items
+{
+    display: grid;
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    margin-top: calc(100vh - 450px);
+    margin-left: 25px;
+}
+a {
+    cursor: pointer;
+    font-size: 30pt;
+    color: rgb(245, 239, 239);
+    font-family: 'Righteous';
+    text-shadow: none;
+    text-shadow: rgb(146, 11, 11) 0px 0 0px;
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.22, 1); 
+}
+a:hover {
+    font-size: 35pt;
+    color: rgb(243, 220, 220);
+    text-shadow: rgb(235, 38, 38) 1px 1px 20px;
+}
+a:active {
+    font-size: 32pt;
+    color: rgb(216, 182, 182);
+    text-shadow: rgb(156, 31, 31) 1px 1px 20px;
+}

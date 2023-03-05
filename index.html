@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <!---FONT-LOAD-MENU-SCREEN--->
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
     <link href="./style.css" rel="stylesheet" type="text/css">
+    <link href="./styles/style-load-screen.css" rel="stylesheet" type="text/css">
+    <link href="./styles/style-menu-screen.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <!-- LOAD -->
+    <div id="load-screen" class="load-screen">
+        <div class="load-bg"></div>
+        <input id="button-load" type="button" class="button-load" value="CLICK  HERE">
+    </div>
+    <!-- MENU -->
+    <div id="menu-screen" class="menu-screen del">
+        <div class="menu-bg"></div>
+        <div class="menu-gamename">GameName</div>
+        <div id="menu-items" class="menu-items">
+            <a id="play-id">Play</a>
+            <a id="load-save-id">Load/Save</a>
+            <a id="shop-id">Shop</a>
+            <a id="settings-id">Settings</a>
+            <a id="exit-id">Exit</a>
+        </div>
+    </div>
+
+    <!-- SHOP -->
+    <!-- SETTINGS -->
+    <!-- STATISTICS -->
+
+    <!-- GAME -->
     <div class="screen">
         <div id="id_spaceship" class="spaceship">
             <progress id="playerHealthbar" class="progress" max="200" value="200"></progress>

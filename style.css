@@ -1,16 +1,22 @@
 body
 {
-    cursor: url(./images/cursor.png), default;
     padding: 0;
     margin: 0;
     scroll-behavior: none;
 }
 ::selection
 {
-    color: blueviolet;
+    color: brown;
 }
+
+/*
+=======================================================
+------------------------Screens------------------------
+=======================================================
+*/
 .screen
 {
+    cursor: url(./images/cursor.png), default;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -18,6 +24,16 @@ body
     background-size: 100%;
     background-image: url(./images/bg.jpg);
 }
+.del
+{
+    display: none;
+}
+
+/*
+=======================================================
+-----------------------Spaceship-----------------------
+=======================================================
+*/
 .spaceship
 {
     position: absolute;
@@ -32,6 +48,11 @@ body
     justify-content: flex-end;
     align-items: center;
 }
+/*
+=======================================================
+------------------Progress-Bar-Health------------------
+=======================================================
+*/
 .progress
 {
     height: 15px;
@@ -54,29 +75,44 @@ body
     border-radius: 20px;
     background-color: brown;
 }
+
+/*
+=====================================================
+----------------------Meteorits----------------------
+=====================================================
+*/
 .meteorit-pic
 {
     height: 150px;
     width: 150px;
     clip-path: polygon(43% 14%, 65% 13%, 83% 25%, 93% 51%, 75% 74%, 55% 86%, 20% 87%, 10% 78%, 5% 54%, 19% 26%);
     background-size: cover;
+    background-repeat: no-repeat;
     background-image: url(./images/meteorit.png);
 }
 @keyframes meteorit-anim {
-    0% {
-        
-    }
+    0% { }
     100% {
         top: calc(100% - 400px);
         left: calc(50% - 75px);
     }
 }
-
+.destroy-pic
+{
+    background-position: 50%;
+    background-size: 110%;
+    background-image: url(./images/meteorite-gif.gif);
+}
 .destroyed
 {
     display: none;
 }
 
+/*
+=======================================================
+-----------------------Game-Over-----------------------
+=======================================================
+*/
 div.gameOver 
 {
     width: 100%;
@@ -89,25 +125,26 @@ div.gameOver
     z-index: 1;
     display: none;
 }
-
 label.gameOver 
 {
     animation: gameOver-anim 2s linear forwards;
 }
-
 @keyframes gameOver-anim {
-    0%
-    {
+    0% {
         color: rgba(165, 42, 42, 0);
         font-size: 0px;
     }
-    100%
-    {
+    100% {
         color: brown;
         font-size: 100px;
     }
 }
 
+/*
+======================================================
+------------------------Levels------------------------
+======================================================
+*/
 div.levelLabel 
 {
     width: 100%;
@@ -119,21 +156,7 @@ div.levelLabel
     background-color: rgba(0, 0, 0, 0.575);
     display: none;
 }
-
 label.levelLabel 
 {
     animation: gameOver-anim 2s linear forwards;
-}
-
-@keyframes gameOver-anim {
-    0%
-    {
-        color: rgba(165, 42, 42, 0);
-        font-size: 0px;
-    }
-    100%
-    {
-        color: brown;
-        font-size: 100px;
-    }
 }

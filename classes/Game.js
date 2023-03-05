@@ -18,7 +18,7 @@ export class Game
     * health: health of meteorite
     * damage: damage that the meteorite inflicts on the player
     */
-    spawnMeteorite(health, damage)
+    async spawnMeteorite(health, damage)
     {
         new Meteorite(health, damage);
     }
@@ -28,6 +28,7 @@ export class Game
      */
     async lvl1()
     {
+        levelLabelText.innerText = "LEVEL 1";
         levelLabel.style.display = "flex";
 
         await sleep(5000);
