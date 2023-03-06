@@ -17,12 +17,23 @@ body
 .screen
 {
     cursor: url(./images/cursor.png), default;
+    display: block;
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background-position: 50% 50%;
+    /* background-position: 50% 50%; */
     background-size: 100%;
-    background-image: url(./images/bg.jpg);
+    background-image: url(./images/game-bg.png);
+    animation: game-bg-anim 50s linear infinite;
+}
+@keyframes game-bg-anim
+{
+    0% {
+        background-position: 0 calc(100% - 100vh);
+    }
+    100% {
+        background-position: 0 0;
+    }
 }
 .del
 {

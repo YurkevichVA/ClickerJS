@@ -13,16 +13,18 @@
     position: absolute;
     height: 100vh;
     width: 100vw;
-    --s: 85.5px; /* control the size */
-    --_g: conic-gradient(from 30deg at 50% 25%,#0000 300deg,#cd2942 0);
+
+    --s: 96px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+
     background:
-        var(--_g) calc(0.2885*var(--s)) calc(7*var(--s)/12),
-        var(--_g) 0 calc(var(--s)/12),
-        conic-gradient(from 120deg at 50% calc(250%/3), #62928d 120deg, #0000 0),
-        repeating-conic-gradient(from 30deg, #0000 0 60deg,#e8cba9 0 120deg),
-        repeating-conic-gradient(#33152e 0 60deg, #62928c 0 120deg, #414352 0 180deg);
-    
-    background-size: calc(0.577*var(--s)) var(--s);
+      repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+       calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+      repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+      
+    background-size: var(--s) calc(var(--s)*0.577);
 }
 .button-load
 {
@@ -34,7 +36,7 @@
     margin-left: 30vw;
     font-family: 'Righteous';
     font-size: 100px;
-    color: rgba(43, 0, 0, 0.95);
+    color: rgba(0, 0, 0, 0.5);
     background: rgba(124, 24, 24, 0.5);
     border: 15px solid rgba(190, 20, 20, 0.5);
     outline: 4px solid;
@@ -42,7 +44,7 @@
     outline-offset: 0px;
     border-style: double;
     text-shadow: none;
-    transition: all 1.5s cubic-bezier(0.22, 1, 0.22, 1); 
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1); 
 }
 .button-load:hover
 {
@@ -50,7 +52,7 @@
     box-shadow: inset 0 0 20px #000000;
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 20px;
-    color: #ffdfdf;
+    color: rgba(255, 255, 255, 0.6);
 }
 .button-load:active
 {

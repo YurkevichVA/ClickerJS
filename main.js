@@ -13,7 +13,6 @@ clearLS();
 document.getElementById('button-load').addEventListener('click', event => {
     document.getElementById('load-screen').classList.add('del');
     document.getElementById('menu-screen').classList.remove('del');
-
 });
 
 document.getElementById('play-id').addEventListener('click', event => {
@@ -21,5 +20,3 @@ document.getElementById('play-id').addEventListener('click', event => {
     // Start game loop
     game.gameLoop();
 });
-
-

@@ -33,7 +33,7 @@ export class Meteorite
             if (healthBar.value <= 0) {
 
                 const newAudio = new Audio('./music/meteorite-explosion.mp3');
-                newAudio.volume = 0.5;
+                newAudio.volume = 0.2;
                 newAudio.play();
 
                 pictureMeteorite.classList.add('destroy-pic');
