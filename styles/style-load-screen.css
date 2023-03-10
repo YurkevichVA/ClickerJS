@@ -3,6 +3,7 @@
 .load-screen
 {
     z-index: 99;
+    display: block;
     position: absolute;
     height: 100vh;
     width: 100vw;

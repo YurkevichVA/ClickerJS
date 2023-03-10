@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <!---FONT-LOAD-MENU-SCREEN--->
+    <title>GameName</title>
+    <!---HEADER-FONT--->
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <!---REGULAR-FONT--->
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 
     <link href="./style.css" rel="stylesheet" type="text/css">
     <link href="./styles/style-load-screen.css" rel="stylesheet" type="text/css">
     <link href="./styles/style-menu-screen.css" rel="stylesheet" type="text/css">
+    <link href="./styles/style-settings-screen.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <!-- LOAD -->
@@ -18,7 +21,7 @@
     </div>
     <!-- MENU -->
     <div id="menu-screen" class="menu-screen del">
-        <div class="menu-bg"></div>
+        <!-- <div class="menu-bg"></div> -->
         <div class="menu-gamename">GameName</div>
         <div id="menu-items" class="menu-items">
             <a id="play-id">Play</a>
@@ -31,10 +34,70 @@
 
     <!-- SHOP -->
     <!-- SETTINGS -->
+    <div id="settings-screen">
+        <div class="settings-bg"></div>
+        <div class="settings-container">
+            <div class="settings-items">
+                <a id="settings-back-id">⇦</a>
+                <a id="display-id">Display</a>  <!-- screen mode && themes -->
+                <a id="sounds-id">Sounds</a>    <!-- set volume of bg-music / menu-music / shooting-music && turn off/on sound -->
+                <a id="game-id">Game</a>        <!-- game mode && import/export game -->
+            </div>
+            <div class="settings-items-set">
+                <div id="display-set-id">
+                    <div>
+                        <label>Brightness : </label>
+                        <input id="id-brightness" type="range" value="100" min="15" max="150">
+                    </div>
+                    <div>
+                        <label>Screen Mode : </label>
+                        <div>
+                            <input id="id-scr-mode-full" name="r1" type="radio">
+                            <label for="id-scr-mode-full">Fullscreen</label>
+                            <input id="id-scr-mode-wind" name="r1" type="radio" checked>
+                            <label for="id-scr-mode-wind">Windowed</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="sounds-set-id">
+                    <div>
+                        <label>General : </label>
+                        <input id="id-general-sound" type="checkbox">
+                    </div>
+                    <div>
+                        <label>Background : </label>
+                        <form oninput="result.value=parseInt(a.value)">
+                            <input id="id-background-sound" name="a" type="range" min="0" max="100" value="50">
+                            <output id="id-result-bg" name="result">50</output>
+                        </form>
+                    </div>
+                    <div>
+                        <label>Shooting : </label>
+                        <form oninput="result.value=parseInt(a.value)">
+                            <input id="id-shooting-sound" name="a" type="range" min="0" max="100" value="50">
+                            <output id="id-result-shoot" name="result">50</output>
+                        </form>
+                    </div>
+                </div>
+                <div id="game-set-id">
+                    <div>
+                        <label>Difficulty mode : </label>
+                        <div>
+                            <input id="r2-1" name="r2" type="radio">
+                            <label for="r2-1">Normal</label>
+                            <input id="r2-2" name="r2" type="radio">
+                            <label for="r2-2">Hard</label>
+                        </div>
+                    </div>
+                    <!-- ...export/import ... -->
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- STATISTICS -->
 
     <!-- GAME -->
-    <div class="screen">
+    <div id="screen">
         <div id="id_spaceship" class="spaceship">
             <progress id="playerHealthbar" class="progress" max="200" value="200"></progress>
         </div>
@@ -48,4 +111,5 @@
 </body>
     <script src="./main.js" type="module"></script>
     <script src="./scripts/sound.js" type="module"></script>
+    <script src="./scripts/settings.js" type="module"></script>
 </html>

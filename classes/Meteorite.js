@@ -15,6 +15,7 @@ export class Meteorite
         meteorit.style.top = '-30%';
         meteorit.style.left = String(Math.floor(Math.random() * 100)) + '%';
         meteorit.style.animation = 'meteorit-anim 8s linear';
+        meteorit.style.filter = `brightness(${document.getElementById('id-brightness').value}%)`;   // set brightness
         meteorit.addEventListener('animationend', event => {
             if (pictureMeteorite.classList.contains('destroy-pic')) { return; }
             player.getDamage(this.damage);

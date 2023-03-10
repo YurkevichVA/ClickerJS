@@ -1,29 +1,48 @@
 // Add fire sound
+/*
+=======================================================
+------------------------Shooting-----------------------
+=======================================================
+*/
 document.addEventListener("mousedown", event => {
-    if (!document.getElementById('load-screen').classList.contains('del')) { return; }
-    if (!document.getElementById('menu-screen').classList.contains('del')) { return; }
-    const newAudio = new Audio('./music/plasma_gun_03.mp3');
-    newAudio.volume = 0.1;
-    newAudio.play();
+    if (document.getElementById('load-screen').style.display !== 'none') { return; }
+    if (document.getElementById('menu-screen').style.display !== 'none') { return; }
+    if (document.getElementById('settings-screen').style.display !== 'none') { return; }
+    const plasma_gun_audio = new Audio('./music/plasma_gun_03.mp3');
+    plasma_gun_audio.volume = document.getElementById('id-shooting-sound').value/100.0;
+    plasma_gun_audio.play();
+});
+/*
+=======================================================
+------------------------BGMusic------------------------
+=======================================================
+*/
+const bgAudio = new Audio('./music/bg-music.mp3');
+document.getElementById('button-load').addEventListener('click', event => {
+    bgAudio.volume = document.getElementById('id-background-sound').value/100.0;
+    bgAudio.loop = true;
+    bgAudio.play();
 }, false);
 
+export {bgAudio};
+
+/*
+=======================================================
+------------------MenuItemsClick&Hover-----------------
+=======================================================
+*/
+//--------------------Load-Screen--------------------//
 document.getElementById('button-load').addEventListener('mouseover', event => {
     const newAudio = new Audio('./music/hover-items-music.mp3');
     newAudio.volume = 0.05;
     newAudio.play();
 }, false);
-
-const bgAudio = new Audio('./music/bg-music.mp3');
 document.getElementById('button-load').addEventListener('click', event => {
     const newAudio = new Audio('./music/menu-click.mp3');
     newAudio.volume = 0.5;
     newAudio.play();
-    
-    bgAudio.volume = 0.3;
-    bgAudio.loop = true;
-    bgAudio.play();
 }, false);
-
+//--------------------Menu-Screen--------------------//
 let menu_items = document.getElementById('menu-items').getElementsByTagName('a');
 for (var i = 0 ; i < menu_items.length; i++) {
     menu_items[i].addEventListener('click', event => {
@@ -37,3 +56,18 @@ for (var i = 0 ; i < menu_items.length; i++) {
         newAudio.play();
     }, false);
 }
+//--------------------Settings-Screen--------------------//
+menu_items = document.getElementById('settings-screen').getElementsByTagName('a');
+for (var i = 0 ; i < menu_items.length; i++) {
+    menu_items[i].addEventListener('click', event => {
+        const newAudio = new Audio('./music/menu-click.mp3');
+        newAudio.volume = 0.5;
+        newAudio.play();
+    }, false);
+    menu_items[i].addEventListener('mouseover', event => {
+        const newAudio = new Audio('./music/hover-items-music.mp3');
+        newAudio.volume = 0.05;
+        newAudio.play();
+    }, false);
+}
+

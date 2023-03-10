@@ -11,12 +11,27 @@ import {clearLS} from "./functions/clearLocalStorage.js";
 clearLS();
 
 document.getElementById('button-load').addEventListener('click', event => {
-    document.getElementById('load-screen').classList.add('del');
-    document.getElementById('menu-screen').classList.remove('del');
+    document.getElementById('load-screen').style.display = 'none';
+    document.getElementById('menu-screen').style.display = 'block';
 });
 
+/*
+======================================================
+-------------------------MENU-------------------------
+======================================================
+*/
+//---------------------Play-Btn---------------------//
 document.getElementById('play-id').addEventListener('click', event => {
-    document.getElementById('menu-screen').classList.add('del');
+    document.getElementById('menu-screen').style.display = 'none';
     // Start game loop
     game.gameLoop();
 });
+//-------------------LoadGame-Btn-------------------//
+
+//---------------------Shop-Btn---------------------//
+
+//-------------------Settings-Btn-------------------//
+document.getElementById('settings-id').addEventListener('click', event => {
+    document.getElementById('settings-screen').style.display = 'block';
+    document.getElementById('menu-screen').style.display = 'none';
+}, false);

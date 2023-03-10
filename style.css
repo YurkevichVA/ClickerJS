@@ -14,7 +14,7 @@ body
 ------------------------Screens------------------------
 =======================================================
 */
-.screen
+#screen
 {
     cursor: url(./images/cursor.png), default;
     display: block;
