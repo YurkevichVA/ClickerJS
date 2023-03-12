@@ -53,6 +53,7 @@ for (var i = 0 ; i < settings_items.length; i++) {
 //--------------------brightness---------------------//
 document.getElementById('id-brightness').addEventListener('change', event => {
     document.getElementById('screen').style.filter = `brightness(${document.getElementById('id-brightness').value}%)`;
+    localStorage.setItem('settings-brightness', document.getElementById('id-brightness').value);
 });
 //--------------------screen-mode--------------------//
 document.getElementById('id-scr-mode-full').addEventListener('click', event => {
@@ -66,17 +67,23 @@ document.getElementById('id-scr-mode-wind').addEventListener('click', event => {
 
 //----------------------SOUNDS-----------------------//
 //---------------background-general-----------------//
-//----------------shooting-in-sound.js------------------//
 document.getElementById('id-background-sound').addEventListener('change', event => {
     bgAudio.volume = document.getElementById('id-background-sound').value/100.0;
+    localStorage.setItem('settings-background-sound', document.getElementById('id-background-sound').value);
+});
+document.getElementById('id-shooting-sound').addEventListener('change', event => {
+    localStorage.setItem('settings-shooting-sound', document.getElementById('id-shooting-sound').value);
 });
 document.getElementById('id-general-sound').addEventListener('change', event => {
-    if (document.getElementById('id-general-sound').checked) {
+    if (!document.getElementById('id-general-sound').checked) {
         bgAudio.volume  = 0;
         document.getElementById('id-background-sound').value = 0;
         document.getElementById('id-shooting-sound').value = 0;
         document.getElementById('id-result-bg').textContent = "0";
         document.getElementById('id-result-shoot').textContent = "0";
+        
+        document.getElementById('id-background-sound').disabled = true;
+        document.getElementById('id-shooting-sound').disabled = true;
     }
     else {
         bgAudio.volume  = 0.5;
@@ -84,5 +91,12 @@ document.getElementById('id-general-sound').addEventListener('change', event => 
         document.getElementById('id-shooting-sound').value = 50;
         document.getElementById('id-result-bg').textContent = "50";
         document.getElementById('id-result-shoot').textContent = "50";
+        
+        document.getElementById('id-background-sound').disabled = false;
+        document.getElementById('id-shooting-sound').disabled = false;
     }
+    localStorage.setItem('settings-background-sound', document.getElementById('id-background-sound').value);
+    localStorage.setItem('settings-shooting-sound', document.getElementById('id-shooting-sound').value);
+    localStorage.setItem('settings-general-sound', document.getElementById('id-general-sound').checked);
 });
+//--------shooting-in-sound.js-(mousedown)----------//

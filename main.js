@@ -23,15 +23,19 @@ document.getElementById('button-load').addEventListener('click', event => {
 //---------------------Play-Btn---------------------//
 document.getElementById('play-id').addEventListener('click', event => {
     document.getElementById('menu-screen').style.display = 'none';
+    
     // Start game loop
     game.gameLoop();
 });
 //-------------------LoadGame-Btn-------------------//
 
 //---------------------Shop-Btn---------------------//
-
+document.getElementById('shop-id').addEventListener('click', event => {
+    document.getElementById('shop-screen').style.display = 'block';
+    document.getElementById('menu-screen').style.display = 'none';
+});
 //-------------------Settings-Btn-------------------//
 document.getElementById('settings-id').addEventListener('click', event => {
     document.getElementById('settings-screen').style.display = 'block';
     document.getElementById('menu-screen').style.display = 'none';
-}, false);
+});

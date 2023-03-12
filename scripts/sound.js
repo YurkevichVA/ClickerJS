@@ -8,6 +8,7 @@ document.addEventListener("mousedown", event => {
     if (document.getElementById('load-screen').style.display !== 'none') { return; }
     if (document.getElementById('menu-screen').style.display !== 'none') { return; }
     if (document.getElementById('settings-screen').style.display !== 'none') { return; }
+    if (document.getElementById('shop-screen').style.display !== 'none') { return; }
     const plasma_gun_audio = new Audio('./music/plasma_gun_03.mp3');
     plasma_gun_audio.volume = document.getElementById('id-shooting-sound').value/100.0;
     plasma_gun_audio.play();
@@ -19,11 +20,24 @@ document.addEventListener("mousedown", event => {
 */
 const bgAudio = new Audio('./music/bg-music.mp3');
 document.getElementById('button-load').addEventListener('click', event => {
-    bgAudio.volume = document.getElementById('id-background-sound').value/100.0;
+    if (localStorage.getItem('settings-general-sound') === 'false') {
+        bgAudio.volume = 0;
+        document.getElementById('id-background-sound').value = 0;
+        document.getElementById('id-shooting-sound').value = 0;
+        document.getElementById('id-result-bg').textContent = "0";
+        document.getElementById('id-result-shoot').textContent = "0";
+        document.getElementById('id-general-sound').checked = false;
+        
+        document.getElementById('id-background-sound').disabled = true;
+        document.getElementById('id-shooting-sound').disabled = true;
+    }
+    else { 
+        bgAudio.volume = document.getElementById('id-background-sound').value/100.0;
+    }
     bgAudio.loop = true;
     bgAudio.play();
-}, false);
 
+}, false);
 export {bgAudio};
 
 /*
@@ -70,4 +84,17 @@ for (var i = 0 ; i < menu_items.length; i++) {
         newAudio.play();
     }, false);
 }
-
+//----------------------Shop-Screen----------------------//
+document.getElementById('shop-back-id').addEventListener('mouseover', event => {
+    const newAudio = new Audio('./music/hover-items-music.mp3');
+    newAudio.volume = 0.05;
+    newAudio.play();
+}, false);
+menu_items = document.getElementById('shop-screen').getElementsByTagName('a');
+for (var i = 0 ; i < menu_items.length; i++) {
+    menu_items[i].addEventListener('click', event => {
+        const newAudio = new Audio('./music/menu-click.mp3');
+        newAudio.volume = 0.5;
+        newAudio.play();
+    }, false);
+}
