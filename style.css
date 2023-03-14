@@ -102,8 +102,6 @@ body
 .meteorit-pic
 {
     cursor: url(./images/aim1.png) 50 50, default;
-    height: 150px;
-    width: 150px;
     clip-path: polygon(43% 14%, 65% 13%, 83% 25%, 93% 51%, 75% 74%, 55% 86%, 20% 87%, 10% 78%, 5% 54%, 19% 26%);
     background-size: cover;
     background-repeat: no-repeat;
@@ -148,6 +146,7 @@ div.gameOver
 label.gameOver 
 {
     cursor: url(./images/aim1.png) 50 50, default;
+    font-family: 'Righteous';
     animation: gameOver-anim 2s linear forwards;
 }
 @keyframes gameOver-anim {
@@ -181,5 +180,6 @@ div.levelLabel
 label.levelLabel 
 {
     cursor: url(./images/aim1.png) 50 50, default;
+    font-family: 'Righteous';
     animation: gameOver-anim 2s linear forwards;
 }

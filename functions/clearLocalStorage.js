@@ -1,6 +1,6 @@
 export function clearLS()
 {
-    //localStorage.clear();
+    localStorage.clear();
 }
 
 export default clearLS;

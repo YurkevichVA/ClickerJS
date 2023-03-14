@@ -1,17 +1,37 @@
 import {Meteorite} from "./Meteorite.js";
+import {Level} from "./Level.js";
 import {sleep} from "../functions/sleep.js";
 
 // Get HTML elements
 const gameOverScreen = document.getElementById("gameOverScreen");   // Element that shows "game over" message
+const winScreen = document.getElementById("winScreen");             // Element that appears when player finish last level
+const winLable = winScreen.children[0];
 const levelLabel = document.getElementById("levelLabel");           // General element that shows level number before level started
 const levelLabelText = document.getElementById("textLevelLabel");   // Label that contains text with level number
 
 /* Game is an object that contains game loop and levels */
 export class Game
 {
-    countOfDestroyed = 0;                                           // Count of destroyed meteorites on the level, required to check whether the level has been passed
-    currentLevel = Number(localStorage.getItem("currentLevel"));    // Contains the number of current level, start value getting from localStorage
-    isGameOver = false;                                             // Required to check whether player lose
+    constructor()
+    {
+        this.countOfDestroyed = 0;                                           // Count of destroyed meteorites on the level, required to check whether the level has been passed
+        this.countOfMeteors = 0;                                             // Count of meteors on current level
+        this.meteorsCoeff = 3;                                               // Coefficient of meteors for every level
+
+        // Contains the number of current level, start value getting from localStorage
+        if(localStorage.getItem("currentLevel") === null)
+        {
+            this.currentLevel = 1;
+            localStorage.setItem("currentLevel", this.currentLevel);
+        }
+        else
+        {
+            this.currentLevel = Number(localStorage.getItem("currentLevel")); 
+        }
+
+        this.isGameOver = false;                                             // Required to check whether player lose
+    }
+
 
     /*
     * Function that spawns the new meteorite
@@ -23,123 +43,120 @@ export class Game
         new Meteorite(health, damage);
     }
 
-    /**
-     * Levels methods
-     */
-    async lvl1()
+
+    async showLevel()
     {
-        levelLabelText.innerText = "LEVEL 1";
+        levelLabelText.innerText = "LEVEL " + this.currentLevel;
         levelLabel.style.display = "flex";
 
         await sleep(5000);
 
         levelLabel.style.display = "none";
-
-        for(let i = 0; i < 4; i++)
-        {
-            this.spawnMeteorite();
-            await sleep(2000);
-        }
-    }
-    async lvl2()
-    {
-        levelLabelText.innerText = "LEVEL 2";
-        levelLabel.style.display = "flex";
-
-        await sleep(5000);
-
-        levelLabel.style.display = "none";
-
-        for(let i = 0; i < 7; i++)
-        {
-            this.spawnMeteorite();
-            await sleep(5000 / i);
-        }
-    }
-    async lvl3()
-    {
-        levelLabelText.innerText = "LEVEL 3";
-        levelLabel.style.display = "flex";
-
-        await sleep(5000);
-
-        levelLabel.style.display = "none";
-
-        for(let i = 0; i < 8; i++)
-        {
-            if(i === 7)
-            {
-                this.spawnMeteorite(500, 300);
-                await sleep(1500);
-            }
-            else
-            {
-                this.spawnMeteorite();
-                await sleep(5000 / i);
-            }
-        }
     }
 
     async gameLoop()
     {
-        // If current level more than 3 return to 1 level
-        if(this.currentLevel > 3)
-        {
-            localStorage.setItem("currentLevel", 1);
-            this.currentLevel = 1;
-        }
 
-        let i = 0;
-        while(i < 4)
+        let level = null;
+
+        this.currentLevel = 10;
+
+        for(let i = this.currentLevel; i <= 10; i++)
         {
-            await this.startLevel();
-            // If game over break the loop
+            console.log("level " + this.currentLevel);
+
+            await this.showLevel();
+
+            switch(this.currentLevel)
+            {
+                case 1:
+                {
+                    level = new Level({delay: 2300, smallCount: 5, mediumCount: 0, largeCount: 0, bossCount: 0});
+                    break;
+                }
+                case 2:
+                {
+                    level = new Level({delay: 2200, smallCount: 5, mediumCount: 3, largeCount: 0, bossCount: 0});
+                    break;
+                }
+                case 3:
+                {
+                    level = new Level({delay: 2100, smallCount: 8, mediumCount: 5, largeCount: 0, bossCount: 0});
+                    break;
+                }
+                case 4:
+                {
+                    level = new Level({delay: 2000, smallCount: 5, mediumCount: 8, largeCount: 0, bossCount: 0});
+                    break;
+                }
+                case 5:
+                {
+                    level = new Level({delay: 1900, smallCount: 5, mediumCount: 3, largeCount: 1, bossCount: 0});
+                    break;
+                }
+                case 6:
+                {
+                    level = new Level({delay: 1800, smallCount: 5, mediumCount: 5, largeCount: 3, bossCount: 0});
+                    break;
+                }
+                case 7:
+                {
+                    level = new Level({delay: 1700, smallCount: 2, mediumCount: 6, largeCount: 5, bossCount: 0});
+                    break;
+                }
+                case 8:
+                {
+                    level = new Level({delay: 1600, smallCount: 6, mediumCount: 5, largeCount: 7, bossCount: 0});
+                    break;
+                }
+                case 9:
+                {
+                    level = new Level({delay: 1000, smallCount: 15, mediumCount: 0, largeCount: 0, bossCount: 0});
+                    break;
+                }
+                case 10:
+                {
+                    level = new Level({delay: 2000, smallCount: 2, mediumCount: 2, largeCount: 1, bossCount: 1});
+                    break;
+                }
+                default:
+                {
+                    console.error("Trying to access unexisting level!");
+                    break;
+                }
+            }
+
+            console.log(level);
+
+            await level.start();
+
             if(this.isGameOver)
                 return;
-            i++;
-        }
-    }
 
-    async startLevel()
-    {
-        if(this.currentLevel === 1)
-        {
-            await this.lvl1();
 
-            while(this.countOfDestroyed < 4)
-                await sleep(1);
-        }
-        else if(this.currentLevel === 2)
-        {
-            await this.lvl2();
+            if(this.currentLevel === 10)
+            {
+                winScreen.style.display = "flex";
+                winLable.style.display = "flex";
+                return;
+            }
 
-            while(this.countOfDestroyed < 7)
-                await sleep(1);
-        }
-        else if(this.currentLevel === 3)
-        {
-            await this.lvl3();
+            this.currentLevel++;            
+            localStorage.setItem('currentLevel', this.currentLevel);
 
-            while(this.countOfDestroyed < 10)
-                await sleep(1);
+            this.countOfDestroyed = 0;
         }
-        
-        if(this.isGameOver) return;
-
-        this.currentLevel++;
-        console.log("current level + 1");
-        if(this.currentLevel > 3)
-        {
-            this.currentLevel = 1;
-        }
-        localStorage.setItem('currentLevel', this.currentLevel);
-        this.countOfDestroyed = 0;
     }
 
     gameOver()
     {
         this.isGameOver = true;
         gameOverScreen.style.display = "flex";
+    }
+
+    Win()
+    {
+
     }
 }
 
