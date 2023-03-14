@@ -59,7 +59,7 @@ export class Game
 
         let level = null;
 
-        this.currentLevel = 10;
+        //this.currentLevel = 10;
 
         for(let i = this.currentLevel; i <= 10; i++)
         {
