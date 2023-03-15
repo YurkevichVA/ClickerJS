@@ -53,7 +53,7 @@ document.getElementById('id-pause-back').addEventListener('click', event => {
     document.getElementById('i-game').style.display = 'none';
     document.getElementById('playerHealthbar').style.display = 'none';
     document.getElementById('menu-screen').style.display = 'block';
-
+    localStorage.setItem("IsPause", false);
     // Save game
     // game.save();
 });
