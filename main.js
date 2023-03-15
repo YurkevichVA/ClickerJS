@@ -31,7 +31,10 @@ document.getElementById('play-id').addEventListener('click', event => {
     game.gameLoop();
 });
 //-------------------LoadGame-Btn-------------------//
-
+document.getElementById('load-save-id').addEventListener('click', event => {
+    document.getElementById('load-save-screen').style.display = 'block';
+    document.getElementById('menu-screen').style.display = 'none';
+});
 //---------------------Shop-Btn---------------------//
 document.getElementById('shop-id').addEventListener('click', event => {
     document.getElementById('shop-screen').style.display = 'block';
