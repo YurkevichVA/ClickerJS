@@ -59,7 +59,7 @@
 }
 .shop-items a
 {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
     display: inline-flex;
     height: 65px;
     width: 95%;
@@ -73,14 +73,14 @@
 }
 .shop-items a:hover
 {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
     font-size: 32pt;
     color: rgba(224, 224, 224, 0.6);
     text-shadow: rgb(235, 38, 38) 1px 1px 10px;
 }
 .shop-items a:active
 {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
     font-size: 30pt;
     color: rgba(202, 202, 202, 0.6);
     text-shadow: rgb(156, 31, 31) 1px 1px 20px;

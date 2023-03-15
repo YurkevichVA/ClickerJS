@@ -1,5 +1,5 @@
 
-localStorage.clear();
+//localStorage.clear();
 console.log(localStorage.getItem("currentLevel"));
 
 // Set global variables
@@ -23,7 +23,10 @@ document.getElementById('button-load').addEventListener('click', event => {
 //---------------------Play-Btn---------------------//
 document.getElementById('play-id').addEventListener('click', event => {
     document.getElementById('menu-screen').style.display = 'none';
-    
+    document.getElementById('shop-screen').style.display = 'none';
+    document.getElementById('settings-screen').style.display = 'none';
+    document.getElementById('i-game').style.display = 'block';
+    document.getElementById('playerHealthbar').style.display = 'block';
     // Start game loop
     game.gameLoop();
 });
@@ -38,4 +41,41 @@ document.getElementById('shop-id').addEventListener('click', event => {
 document.getElementById('settings-id').addEventListener('click', event => {
     document.getElementById('settings-screen').style.display = 'block';
     document.getElementById('menu-screen').style.display = 'none';
+});
+
+/*
+======================================================
+-------------------------GAME-------------------------
+======================================================
+*/
+document.getElementById('id-pause-btn').addEventListener('click', event => {
+    document.getElementById('pause-screen').style.display = 'flex';
+    localStorage.setItem("IsPause", true);
+
+    // Pause game
+    // game.pause();
+});
+document.getElementById('id-pause-back').addEventListener('click', event => {
+    document.getElementById('pause-screen').style.display = 'none';
+    document.getElementById('i-game').style.display = 'none';
+    document.getElementById('playerHealthbar').style.display = 'none';
+    document.getElementById('menu-screen').style.display = 'block';
+
+    // Save game
+    // game.save();
+});
+document.getElementById('id-pause-settings').addEventListener('click', event => {
+    document.getElementById('pause-screen').style.display = 'none';
+    document.getElementById('settings-screen').style.display = 'block';
+});
+document.getElementById('id-pause-shop').addEventListener('click', event => {
+    document.getElementById('pause-screen').style.display = 'none';
+    document.getElementById('shop-screen').style.display = 'block';
+});
+document.getElementById('id-pause-continue').addEventListener('click', event => {
+    document.getElementById('pause-screen').style.display = 'none';
+    localStorage.setItem("IsPause", false);
+
+    // Continue game
+    // game.continue();
 });

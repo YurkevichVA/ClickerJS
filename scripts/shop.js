@@ -14,6 +14,10 @@ for (var i = 0 ; i < shop_items.length; i++) {
     if (shop_items[i].id === 'shop-back-id') {
         shop_items[i].addEventListener('click', event => {
             document.getElementById('shop-screen').style.display = 'none';
+            if (localStorage.getItem("IsPause")) {
+                document.getElementById('pause-screen').style.display = 'flex';
+                return;
+            }
             document.getElementById('menu-screen').style.display = 'block';
         });
     }

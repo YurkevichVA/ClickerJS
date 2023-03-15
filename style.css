@@ -13,7 +13,7 @@ body
     cursor: url(./images/cursor_def.png), default;
 }
 .cursor-pointer {
-    cursor: url(./images/cursor_pointer.png), pointer;
+    cursor: url(./images/cursor_def.png), pointer;
 }
 
 /*
@@ -93,6 +93,10 @@ body
     border-radius: 20px;
     background-color: brown;
 }
+#playerHealthbar {
+    display: none;
+    height: 20px;
+}
 
 /*
 =====================================================
@@ -168,14 +172,13 @@ label.gameOver
 div.levelLabel 
 {
     cursor: url(./images/aim1.png) 50 50, default;
-    width: 100%;
-    height: 100%;
+    display: none;
     position: absolute;
-    display: flex;
+    height: 100vh;
+    width: 100vw;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.575);
-    display: none;
 }
 label.levelLabel 
 {
@@ -183,3 +186,232 @@ label.levelLabel
     font-family: 'Righteous';
     animation: gameOver-anim 2s linear forwards;
 }
+
+/*----------------------I-GAME----------------------*/
+#i-game {
+    display: none;
+}
+/*
+======================================================
+---------------------Pause-&-Bulb---------------------
+======================================================
+*/
+.game-button
+{
+    opacity: 0.6;
+    height: 80px;
+    width: 80px;
+    background-position: 50% 50%;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-color:rgba(255, 255, 255, 0);
+
+    border: 1px solid rgba(255, 255, 255);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1); 
+}
+.gb1 {
+    margin-top: 15px;
+    margin-left: 15px;
+    background-image: url(./images/pause.png);
+}
+.gb2 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-image: url(./images/bulb_off.png);
+}
+.game-button:hover
+{
+    cursor: url(./images/cursor_def.png), default;
+    opacity: 1;
+    outline-offset: 5px;
+}
+.game-button:active
+{
+    opacity: 0.8;
+    outline-offset: 2px;
+    height: 75px;
+    width: 75px;
+}
+.gb1:active {
+    margin-top: 17.5px;
+    margin-left: 17.5px;
+}
+.gb2:active {
+    top: 17.5px;
+    right: 17.5px;
+}
+
+/*
+======================================================
+--------------------KeyPress-Items--------------------
+======================================================
+*/
+.game-items
+{
+    cursor: url(./images/cursor_def.png), default;
+
+    position: absolute;
+    height: 60px;
+    width: 60px;
+
+    background-position: 50% 50%;
+    background-size: 99% 99%;
+    background-repeat: no-repeat;
+    background-color:rgba(255, 255, 255, 0);
+    border-radius: 50px;
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1); 
+}
+.gi1 {
+    bottom: 160px;
+    left: calc(50% - 190px - 60px);
+    background-image: url(./images/super-shot-img.png);
+}
+.gi2 {
+    bottom: 60px;
+    left: calc(50% - 170px - 60px);
+    background-size: 95% 95%;
+    background-image: url(./images/total-shot-img.png);
+}
+.gi3 {
+    bottom: 160px;
+    left: calc(50% + 190px);
+    background-size: 60% 60%;
+    background-image: url(./images/shop-item-energy-img.png);
+}
+.gi4 {
+    bottom: 60px;
+    left: calc(50% + 170px);
+    background-size: 80% 80%;
+    background-image: url(./images/shop-item-shield-img.png);
+}
+/*--------------------------------------------------*/
+.lable-key
+{
+    cursor: url(./images/cursor_def.png), default;
+    position: absolute;
+    color: rgba(255, 255, 255);
+    font-size: 20pt;
+    font-family: 'Righteous';
+}
+.key-w {
+    bottom: 150px;
+    left: calc(50% - 190px - 60px);
+}
+.key-q {
+    bottom: 50px;
+    left: calc(50% - 170px - 60px);
+}
+.key-e {
+    bottom: 150px;
+    left: calc(50% + 190px);
+}
+.key-s {
+    bottom: 50px;
+    left: calc(50% + 170px);
+}
+/*--------------------------------------------------*/
+.lable-count
+{
+    cursor: url(./images/cursor_def.png), default;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12pt;
+    font-family: 'Righteous';
+}
+.count-super-shot {
+    bottom: 150px;
+    left: calc(50% - 200px);
+}
+.count-total-shot {
+    bottom: 50px;
+    left: calc(50% - 180px);
+}
+.count-energy-item {
+    bottom: 150px;
+    left: calc(50% + 180px + 60px);
+}
+.count-shield-item {
+    bottom: 50px;
+    left: calc(50% + 160px + 60px);
+}
+
+/*
+======================================================
+----------------------Game-Pause----------------------
+======================================================
+*/
+#pause-screen
+{
+    cursor: url(../images/cursor_def.png), default;
+    z-index: 97;
+    /* display: flex; */
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+.pause-bg
+{
+    cursor: url(./images/cursor_def.png), default;
+
+    opacity: 0.7;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+
+    --s: 96px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+
+    background:
+      repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+       calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+      repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+      
+    background-size: var(--s) calc(var(--s)*0.577);
+}
+.pause-button
+{
+    cursor: url(./images/cursor_def.png), default;
+
+    opacity: 0.6;
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+
+    background-position: 50% 50%;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-color:rgba(255, 255, 255, 0);
+
+    border: 3px solid rgba(255, 255, 255);
+    outline: 3px solid;
+    outline-color: rgba(255, 255, 255);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1); 
+}
+.pause-button:hover {
+    cursor: url(./images/cursor_def.png), default;
+    opacity: 1;
+    outline-offset: 5px;
+}
+.pause-button:active {
+    cursor: url(./images/cursor_def.png), default;
+    margin: 5px;
+}
+#id-pause-back      { background-image: url(./images/back_ico.png);     }
+#id-pause-settings  { background-image: url(./images/settings_ico.png); }
+#id-pause-shop      { background-image: url(./images/shop_ico.png);     }
+#id-pause-continue  { background-image: url(./images/continue_ico.png); }

@@ -65,7 +65,7 @@
 }
 .settings-items a
 {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), pointer;
     margin-left: 10px;
     font-size: 29pt;
     font-family: 'Righteous';
@@ -74,14 +74,14 @@
 }
 .settings-items a:hover
 {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), pointer;
     font-size: 32pt;
     color: rgba(224, 224, 224, 0.6);
     text-shadow: rgb(235, 38, 38) 1px 1px 10px;
 }
 .settings-items a:active
 {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), pointer;
     font-size: 30pt;
     color: rgba(202, 202, 202, 0.6);
     text-shadow: rgb(156, 31, 31) 1px 1px 20px;
@@ -133,7 +133,7 @@
     opacity: 1;
 }
 #id-brightness::-webkit-slider-thumb {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), pointer;
     appearance: none;
     height: 15px;
     width: 15px;
@@ -160,7 +160,7 @@
     opacity: 1;
 }
 #sounds-set-id input[type="range"]::-webkit-slider-thumb {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), pointer;
     appearance: none;
     height: 15px;
     width: 15px;

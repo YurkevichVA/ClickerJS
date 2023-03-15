@@ -24,6 +24,10 @@ for (var i = 0 ; i < settings_items.length; i++) {
     if (settings_items[i].id === 'settings-back-id') {
         settings_items[i].addEventListener('click', event => {
             document.getElementById('settings-screen').style.display = 'none';
+            if (localStorage.getItem("IsPause")) {
+                document.getElementById('pause-screen').style.display = 'flex';
+                return;
+            }
             document.getElementById('menu-screen').style.display = 'block';
         });
     }
@@ -66,7 +70,7 @@ document.getElementById('id-scr-mode-wind').addEventListener('click', event => {
 });
 
 //----------------------SOUNDS-----------------------//
-//---------------background-general-----------------//
+//---------------background-general------------------//
 document.getElementById('id-background-sound').addEventListener('change', event => {
     bgAudio.volume = document.getElementById('id-background-sound').value/100.0;
     localStorage.setItem('settings-background-sound', document.getElementById('id-background-sound').value);

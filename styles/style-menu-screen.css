@@ -29,7 +29,7 @@
     margin-left: 25px;
 }
 .menu-items a {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
 
     cursor: pointer;
     font-size: 30pt;
@@ -40,14 +40,14 @@
     transition: all 0.8s cubic-bezier(0.22, 1, 0.22, 1); 
 }
 .menu-items a:hover {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
 
     font-size: 35pt;
     color: rgb(243, 220, 220);
     text-shadow: rgb(235, 38, 38) 1px 1px 20px;
 }
 .menu-items a:active {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
     
     font-size: 32pt;
     color: rgb(216, 182, 182);
