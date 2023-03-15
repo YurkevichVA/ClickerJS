@@ -1,15 +1,8 @@
 import { SaveSlot } from "../classes/SaveSlot.js";
 import { Game } from "../classes/Game.js";
 import { Spaceship} from "../classes/Spaceship.js";
-/*
- * * * * SAVE LOAD * * * *
- * 
- */
-/*
-=======================================================
---------------------------Load/Save-------------------------
-=======================================================
-*/
+
+// Starts the game
 function start()
 {
     // Set global variables
@@ -31,21 +24,21 @@ function start()
 }
 
 // Back button
-const shop_items = document.getElementById('load-save-screen').getElementsByTagName('a');
-for (var i = 0 ; i < shop_items.length; i++) {
-    if (shop_items[i].id === 'save-load-back-id') {
-        shop_items[i].addEventListener('click', event => {
-            document.getElementById('load-save-screen').style.display = 'none';
-            document.getElementById('menu-screen').style.display = 'block';
-        });
-    }
-}
+const back_button = document.getElementById('play-back-id');
+back_button.addEventListener('click', event => {
+    document.getElementById('load-save-screen').style.display = 'none';
+    document.getElementById('menu-screen').style.display = 'block';
+});
 
+// Elements from html
 let start_buttons = document.getElementsByClassName("start-button");
 let delete_buttons = document.getElementsByClassName('delete-button');
 let labels = document.getElementsByClassName('slot-label');
-// Recieve saves
+
+// Recieve saves from local storage
 window.slots = JSON.parse(localStorage.getItem('slots'));
+
+// Set slots view
 if(window.slots !== null && window.slots !== undefined)
 {
     for(let i = 0; i < 3; i++)
@@ -70,14 +63,17 @@ else
     window.slots = [null, null, null];
 }
 
+// Start buttons
 const slot_one_start = document.getElementById('start-slot-one');
 const slot_two_start = document.getElementById('start-slot-two');
 const slot_three_start = document.getElementById('start-slot-three');
+
+// Delete buttons
 const slot_one_delete = document.getElementById('delete-slot-one');
 const slot_two_delete = document.getElementById('delete-slot-two');
 const slot_three_delete = document.getElementById('delete-slot-three');
 
-// Add listeners
+// Add start listeners
 slot_one_start.addEventListener('click', e => {
     if(window.slots[0] === null)
         window.slots[0] = new SaveSlot();
@@ -103,21 +99,22 @@ slot_three_start.addEventListener('click', e => {
     start();
 });
 
+// Add delete listeners
 slot_one_delete.addEventListener('click', e => {
     window.slots[0] = null;
     slot_one_delete.disabled = true;
     labels[0].textContent = 'SLOT 1';
-    localStorage.setItem('slots', window.slots)
+    localStorage.setItem('slots', JSON.stringify(window.slots));
 });
 slot_two_delete.addEventListener('click', e => {
     window.slots[1] = null;
     slot_two_delete.disabled = true;
     labels[1].textContent = 'SLOT 2';
-    localStorage.setItem('slots', window.slots)
+    localStorage.setItem('slots', JSON.stringify(window.slots));
 });
 slot_three_delete.addEventListener('click', e => {
     window.slots[2] = null;
     slot_three_delete.disabled = true;
     labels[2].textContent = 'SLOT 3';
-    localStorage.setItem('slots', window.slots)
+    localStorage.setItem('slots', JSON.stringify(window.slots));
 })
