@@ -1,0 +1,84 @@
+#load-save-screen {
+    cursor: url(../images/cursor_def.png), default;
+    z-index: 97;
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+.load-save-bg {
+    opacity: 0.7;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+
+    --s: 96px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+
+    background:
+      repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+       calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+      repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+      
+    background-size: var(--s) calc(var(--s)*0.577);
+}
+.load-save-container {
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    height: 400px;
+    width: 550px;
+    top: calc(50% - 200px - 5px);
+    left: calc(50% - 275px - 5px);
+    background: rgba(41, 41, 41);
+    border: 5px rgba(190, 20, 20, 0.5);
+    border-style: solid;
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+#save-load-back-id
+{
+    cursor: url(../images/cursor_pointer.png), pointer;
+    display: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 29pt;
+    font-family: 'Righteous';
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+#save-load-back-id:hover
+{
+    cursor: url(../images/cursor_pointer.png), pointer;
+    font-size: 32pt;
+    color: rgba(224, 224, 224, 0.6);
+    text-shadow: rgb(235, 38, 38) 1px 1px 10px;
+}
+.slots {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.save-slot {
+    width: 40%;
+    height: 95%;
+    font-size: 30pt;
+    border: 0px;
+    border-radius: 25px;
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.6);;
+    font-family: 'Righteous';
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+.save-slot:hover {
+    cursor: url(../images/cursor_pointer.png), pointer;
+    font-size: 32pt;
+    color: rgba(224, 224, 224, 0.6);
+    text-shadow: rgb(235, 38, 38) 1px 1px 10px;
+}
