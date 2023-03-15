@@ -14,7 +14,7 @@
     <link href="./styles/style-settings-screen.css" rel="stylesheet" type="text/css">
     <link href="./styles/style-shop-screen.css" rel="stylesheet" type="text/css">
     <link href="./styles/style-win-screen.css" rel="stylesheet" type="text/css">
-    <link href="./styles/style-save-load-screen.css" rel="stylesheet" type="text/css">
+    <link href="./styles/style-play-screen.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <!-- LOAD -->
@@ -28,7 +28,6 @@
         <div class="menu-gamename">SpaceClick</div>
         <div id="menu-items" class="menu-items">
             <a id="play-id">Play</a>
-            <a id="load-save-id">Load/Save</a>
             <a id="shop-id">Shop</a>
             <a id="settings-id">Settings</a>
             <a id="exit-id">Exit</a>
@@ -141,9 +140,21 @@
         <div class="load-save-container">
             <a id="save-load-back-id">⇦</a>
             <div class="slots">
-                <button id="slot-one" class="save-slot">SLOT 1</button>
-                <button id="slot-two" class="save-slot">SLOT 2</button>
-                <button id="slot-three" class="save-slot">SLOT 3</button>
+                <div id="slot-one" class="save-slot">
+                    <label id="slot-one-label" class="slot-label">SLOT 1</label>
+                    <button id="start-slot-one" class="slot-button start-button">START</button>
+                    <button id="delete-slot-one" class="slot-button delete-button" disabled>DELETE</button>
+                </div>
+                <div id="slot-two" class="save-slot">
+                    <label id="slot-two-label" class="slot-label">SLOT 2</label>
+                    <button id="start-slot-two" class="slot-button start-button">START</button>
+                    <button id="delete-slot-two" class="slot-button delete-button" disabled>DELETE</button>
+                </div>
+                <div id="slot-three" class="save-slot">
+                    <label id="slot-three-label" class="slot-label">SLOT 3</label>
+                    <button id="start-slot-three" class="slot-button start-button">START</button>
+                    <button id="delete-slot-three" class="slot-button delete-button" disabled>DELETE</button>
+                </div>
             </div>
         </div>
     </div>
@@ -201,5 +212,5 @@
     <script src="./scripts/sound.js" type="module"></script>
     <script src="./scripts/shop.js" type="module"></script>
     <script src="./scripts/settings.js" type="module"></script>
-    <script src="./scripts/save-load.js" type="module"></script>
+    <script src="./scripts/play-screen.js" type="module"></script>
 </html>

@@ -1,11 +1,11 @@
 export class Spaceship
 {
-    health = 200;
-    damage = 15;
-
     constructor()
     {
+        this.health = window.currentSlot.player_hp;
+        this.damage = 15;
         this.healthBar = window.document.getElementById("playerHealthbar");
+        this.healthBar.value = this.health;
     }
  
     getDamage = function (dmg) {

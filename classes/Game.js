@@ -18,16 +18,7 @@ export class Game
         this.countOfMeteors = 0;                                             // Count of meteors on current level
         this.meteorsCoeff = 3;                                               // Coefficient of meteors for every level
 
-        // Contains the number of current level, start value getting from localStorage
-        if(localStorage.getItem("currentLevel") === null)
-        {
-            this.currentLevel = 1;
-            localStorage.setItem("currentLevel", this.currentLevel);
-        }
-        else
-        {
-            this.currentLevel = Number(localStorage.getItem("currentLevel")); 
-        }
+        this.currentLevel = window.currentSlot.level;
 
         this.isGameOver = false;                                             // Required to check whether player lose
     }
@@ -141,7 +132,8 @@ export class Game
                 return;
             }
 
-            this.currentLevel++;            
+            this.currentLevel++;  
+            this.save();         
             localStorage.setItem('currentLevel', this.currentLevel);
 
             this.countOfDestroyed = 0;
@@ -154,9 +146,33 @@ export class Game
         gameOverScreen.style.display = "flex";
     }
 
+    save()
+    {
+        window.slots[window.currentSlotIndex].level = this.currentLevel;
+        window.slots[window.currentSlotIndex].player_hp = window.player.health;
+        window.slots[window.currentSlotIndex].date_and_time = new Date();
+
+        console.log(window.slots);
+        console.log(window.currentSlot);
+        console.log(window.slots[window.currentSlotIndex]);
+        console.log(window.slots[window.currentSlotIndex].level);
+
+        localStorage.setItem('slots', JSON.stringify(window.slots));
+    }
+
+    pause()
+    {
+        // TO DO
+    }
+
+    continue()
+    {
+        // TO DO
+    }
+
     Win()
     {
-
+        // TO DO
     }
 }
 

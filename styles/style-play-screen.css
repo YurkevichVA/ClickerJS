@@ -56,6 +56,7 @@
     text-shadow: rgb(235, 38, 38) 1px 1px 10px;
 }
 .slots {
+    cursor: url(../images/cursor_def.png), default;
     height: 100%;
     display: flex;
     align-items: center;
@@ -66,19 +67,62 @@
     margin-bottom: 10px;
 }
 .save-slot {
+    cursor: url(../images/cursor_def.png), default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 40%;
     height: 95%;
     font-size: 30pt;
     border: 0px;
     border-radius: 25px;
     background-color: #1d1d1d;
-    color: rgba(255, 255, 255, 0.6);;
+    color: rgba(255, 255, 255, 0.6);
     font-family: 'Righteous';
     transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
 }
+label {
+    cursor: url(../images/cursor_def.png), default;
+}
+.slot-label {
+    font-size: 25pt;
+    text-align: center;
+}
 .save-slot:hover {
-    cursor: url(../images/cursor_pointer.png), pointer;
+    cursor: url(../images/cursor_def.png), default;
     font-size: 32pt;
+    color: rgba(224, 224, 224, 0.6);
+    text-shadow: rgb(235, 38, 38) 1px 1px 10px;
+}
+.slot-button {
+    background-color: transparent;
+    font-family: 'Righteous';
+    font-size: 20pt;
+    border: 0px;
+    color: rgba(255, 255, 255, 0.418);
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+    
+}
+.slot-button:disabled {
+    background-color: transparent;
+    font-family: 'Righteous';
+    font-size: 20pt;
+    border: 0px;
+    color: rgba(255, 255, 255, 0.178);
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+.slot-button[disabled]:hover {
+    background-color: transparent;
+    font-family: 'Righteous';
+    font-size: 22pt;
+    border: 0px;
+    color: rgba(255, 255, 255, 0.178);
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+.slot-button:hover {
+    cursor: url(../images/cursor_pointer.png), pointer;
+    font-size: 22pt;
     color: rgba(224, 224, 224, 0.6);
     text-shadow: rgb(235, 38, 38) 1px 1px 10px;
 }

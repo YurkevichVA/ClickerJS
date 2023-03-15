@@ -1,14 +1,14 @@
 
 //localStorage.clear();
-console.log(localStorage.getItem("currentLevel"));
+//console.log(localStorage.getItem("currentLevel"));
 
-// Set global variables
-window["game"] = new Game();            // Game is an object that contains game loop and levels
-window["player"] = new Spaceship();     // Spaceship is an object that contains player health and damage
+// // Set global variables
+// window["game"] = new Game();            // Game is an object that contains game loop and levels
+// window["player"] = new Spaceship();     // Spaceship is an object that contains player health and damage
 
 // Import modules
-import {Game} from "./classes/Game.js";
-import {Spaceship} from "./classes/Spaceship.js";
+// import {Game} from "./classes/Game.js";
+// import {Spaceship} from "./classes/Spaceship.js";
 
 document.getElementById('button-load').addEventListener('click', event => {
     document.getElementById('load-screen').style.display = 'none';
@@ -22,16 +22,6 @@ document.getElementById('button-load').addEventListener('click', event => {
 */
 //---------------------Play-Btn---------------------//
 document.getElementById('play-id').addEventListener('click', event => {
-    document.getElementById('menu-screen').style.display = 'none';
-    document.getElementById('shop-screen').style.display = 'none';
-    document.getElementById('settings-screen').style.display = 'none';
-    document.getElementById('i-game').style.display = 'block';
-    document.getElementById('playerHealthbar').style.display = 'block';
-    // Start game loop
-    game.gameLoop();
-});
-//-------------------LoadGame-Btn-------------------//
-document.getElementById('load-save-id').addEventListener('click', event => {
     document.getElementById('load-save-screen').style.display = 'block';
     document.getElementById('menu-screen').style.display = 'none';
 });
