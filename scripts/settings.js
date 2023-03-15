@@ -24,7 +24,7 @@ for (var i = 0 ; i < settings_items.length; i++) {
     if (settings_items[i].id === 'settings-back-id') {
         settings_items[i].addEventListener('click', event => {
             document.getElementById('settings-screen').style.display = 'none';
-            if (localStorage.getItem("IsPause")) {
+            if (localStorage.getItem("IsPause") === 'true') {
                 document.getElementById('pause-screen').style.display = 'flex';
                 return;
             }
