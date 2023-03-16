@@ -94,6 +94,13 @@ export class Meteorite
     {
         this.meteorit.style.animationPlayState = 'running';
     }
+
+    destroy()
+    {
+        this.healthBar.classList.add('destroyed');
+        this.pictureMeteorite.classList.add('destroyed');
+        this.meteorit.classList.add('destroyed');
+    }
 }
 
 export default Meteorite;

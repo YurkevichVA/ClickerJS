@@ -1,3 +1,5 @@
+import { setSlotsView } from "./scripts/play-screen.js";
+
 // Button on load screen
 document.getElementById('button-load').addEventListener('click', event => {
     document.getElementById('load-screen').style.display = 'none';
@@ -13,6 +15,7 @@ document.getElementById('button-load').addEventListener('click', event => {
 document.getElementById('play-id').addEventListener('click', event => {
     document.getElementById('load-save-screen').style.display = 'block';
     document.getElementById('menu-screen').style.display = 'none';
+    setSlotsView();
 });
 //---------------------Shop-Btn---------------------//
 document.getElementById('shop-id').addEventListener('click', event => {
@@ -44,7 +47,9 @@ document.getElementById('id-pause-back').addEventListener('click', event => {
     document.getElementById('menu-screen').style.display = 'block';
     localStorage.setItem("IsPause", false);
     // Save game
-    // game.save();
+    game.save();
+    game.exit();
+    game = null;
 });
 document.getElementById('id-pause-settings').addEventListener('click', event => {
     document.getElementById('pause-screen').style.display = 'none';

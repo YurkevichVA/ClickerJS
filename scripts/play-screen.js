@@ -38,31 +38,35 @@ let labels = document.getElementsByClassName('slot-label');
 // Recieve saves from local storage
 window.slots = JSON.parse(localStorage.getItem('slots'));
 
-// Set slots view
-if(window.slots !== null && window.slots !== undefined)
+export function setSlotsView()
 {
-    for(let i = 0; i < 3; i++)
+    // Set slots view
+    if(window.slots !== null && window.slots !== undefined)
     {
-        if(window.slots[i] !== null)
+        for(let i = 0; i < 3; i++)
         {
-            delete_buttons[i].disabled = false;
-            console.log(window.slots[i].date_and_time);
-            console.log(window.slots);
-            let temp = window.slots[i].date_and_time
-            labels[i].textContent = 
-                temp.charAt(8) + temp.charAt(9) + "." +
-                temp.charAt(5) + temp.charAt(6) + "." +
-                temp.charAt(0) + temp.charAt(1) + temp.charAt(2) + temp.charAt(3) + "\n" +
-                temp.charAt(11) + temp.charAt(12) + ":"
-                + temp.charAt(14) + temp.charAt(15);
+            if(window.slots[i] !== null)
+            {
+                delete_buttons[i].disabled = false;
+                let temp = window.slots[i].date_and_time;
+                if(typeof temp !== String)
+                {
+                    temp = (new Date(String(temp))).toISOString();
+                }
+                labels[i].textContent = 
+                    temp.charAt(8) + temp.charAt(9) + "." +
+                    temp.charAt(5) + temp.charAt(6) + "." +
+                    temp.charAt(0) + temp.charAt(1) + temp.charAt(2) + temp.charAt(3) + "\n" +
+                    temp.charAt(11) + temp.charAt(12) + ":"
+                    + temp.charAt(14) + temp.charAt(15);
+            }
         }
     }
+    else
+    {
+        window.slots = [null, null, null];
+    }
 }
-else
-{
-    window.slots = [null, null, null];
-}
-
 // Start buttons
 const slot_one_start = document.getElementById('start-slot-one');
 const slot_two_start = document.getElementById('start-slot-two');

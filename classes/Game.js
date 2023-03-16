@@ -168,6 +168,17 @@ export class Game
         this.isPause = false;
     }
 
+    exit()
+    {
+        if(this.level.meteoritesArr !== undefined)
+        {
+            this.level.meteoritesArr.forEach(element => {
+                element.destroy();
+            });
+        }
+        this.level = null;
+    }
+
     Win()
     {
         // TO DO
