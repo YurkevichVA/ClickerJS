@@ -138,11 +138,6 @@ export class Game
         window.slots[window.currentSlotIndex].player_hp = window.player.health;
         window.slots[window.currentSlotIndex].date_and_time = new Date();
 
-        console.log(window.slots);
-        console.log(window.currentSlot);
-        console.log(window.slots[window.currentSlotIndex]);
-        console.log(window.slots[window.currentSlotIndex].level);
-
         localStorage.setItem('slots', JSON.stringify(window.slots));
     }
 

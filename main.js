@@ -1,5 +1,8 @@
 import { setSlotsView } from "./scripts/play-screen.js";
 
+//localStorage.clear();
+
+
 // Button on load screen
 document.getElementById('button-load').addEventListener('click', event => {
     document.getElementById('load-screen').style.display = 'none';
@@ -46,8 +49,7 @@ document.getElementById('id-pause-back').addEventListener('click', event => {
     document.getElementById('playerHealthbar').style.display = 'none';
     document.getElementById('menu-screen').style.display = 'block';
     localStorage.setItem("IsPause", false);
-    // Save game
-    game.save();
+    
     game.exit();
     game = null;
 });
