@@ -50,6 +50,12 @@ export class Level
                 await sleep(generateRandom(this.delay - 600, this.delay));
             }
             
+            if(window.game.isPause)
+            {
+                while(window.game.isPause)
+                    await sleep(1);
+            }
+
             if(this.mediumCount > 0)
             {
                 this.meteoritesArr.push(this.spawnMedium());
@@ -58,12 +64,24 @@ export class Level
                 await sleep(generateRandom(this.delay - 600, this.delay + 100));
             }
 
+            if(window.game.isPause)
+            {
+                while(window.game.isPause)
+                    await sleep(1);
+            }
+
             if(this.largeCount > 0)
             {
                 this.meteoritesArr.push(this.spawnLarge());
                 spawnedMeteorites++;
                 this.largeCount--;
                 await sleep(generateRandom(this.delay - 500, this.delay + 200));
+            }
+
+            if(window.game.isPause)
+            {
+                while(window.game.isPause)
+                    await sleep(1);
             }
 
             if(this.bossCount > 0 && spawnedMeteorites == this.generalCount - 1)

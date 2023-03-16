@@ -13,57 +13,57 @@ export class Meteorite
         this.isDestroyed = false;
 
         // Set style for meteorite div
-        let meteorit = document.createElement('div');
-        meteorit.style.position = 'absolute';
+        this.meteorit = document.createElement('div');
+        this.meteorit.style.position = 'absolute';
         if(config.size === 600)
         {
-            meteorit.style.top = '-50%';
-            meteorit.style.left = '30%';
+            this.meteorit.style.top = '-50%';
+            this.meteorit.style.left = '30%';
         }
         else
         {
-            meteorit.style.top = '-30%';
-            meteorit.style.left = String(Math.floor(Math.random() * 100)) + '%';
+            this.meteorit.style.top = '-30%';
+            this.meteorit.style.left = String(Math.floor(Math.random() * 100)) + '%';
         }
-        meteorit.style.display = "flex";
-        meteorit.style.justifyContent = "center";
-        meteorit.style.flexDirection = "column";
-        meteorit.style.alignContent = "center";
-        meteorit.style.alignItems = "center";
-        meteorit.style.gap = "15px";
-        meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(0.46, 0.03, 0.52, 0.96)";
-        meteorit.style.filter = `brightness(${document.getElementById('id-brightness').value}%)`;   // set brightness
-        meteorit.addEventListener('animationend', event => {
+        this.meteorit.style.display = "flex";
+        this.meteorit.style.justifyContent = "center";
+        this.meteorit.style.flexDirection = "column";
+        this.meteorit.style.alignContent = "center";
+        this.meteorit.style.alignItems = "center";
+        this.meteorit.style.gap = "15px";
+        this.meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(0.46, 0.03, 0.52, 0.96)";
+        this.meteorit.style.filter = `brightness(${document.getElementById('id-brightness').value}%)`;   // set brightness
+        this.meteorit.addEventListener('animationend', event => {
             if(this.isDestroyed) { return; }
             
             this.isDestroyed = true;
-            meteorit.classList.add('destroyed');
-            player.getDamage(this.dmg);
-            game.countOfDestroyed++;
+            this.meteorit.classList.add('destroyed');
+            window.player.getDamage(this.dmg);
+            window.game.countOfDestroyed++;
         });
 
         // Set style for health bar
-        let healthBar = document.createElement('progress');
-        healthBar.classList.add('progress');
-        healthBar.value = this.hp;
-        healthBar.max = this.hp;
+        this.healthBar = document.createElement('progress');
+        this.healthBar.classList.add('progress');
+        this.healthBar.value = this.hp;
+        this.healthBar.max = this.hp;
 
         // Set style for picture
-        let pictureMeteorite = document.createElement('div');
-        pictureMeteorite.style.width = config.size + "px";
-        pictureMeteorite.style.height = config.size + "px";
-        pictureMeteorite.classList.add('meteorit-pic');
-        pictureMeteorite.addEventListener('mousedown', async event => {
+        this.pictureMeteorite = document.createElement('div');
+        this.pictureMeteorite.style.width = config.size + "px";
+        this.pictureMeteorite.style.height = config.size + "px";
+        this.pictureMeteorite.classList.add('meteorit-pic');
+        this.pictureMeteorite.addEventListener('mousedown', async event => {
             if(!this.isDestroyed)
             {
-                healthBar.value -= player.damage;
-                if (healthBar.value <= 0) 
+                this.healthBar.value -= player.damage;
+                if (this.healthBar.value <= 0) 
                 {
                     this.isDestroyed = true;
                     
-                    healthBar.classList.add('destroyed');
+                    this.healthBar.classList.add('destroyed');
 
-                    pictureMeteorite.classList.add('destroy-pic');
+                    this.pictureMeteorite.classList.add('destroy-pic');
 
                     const newAudio = new Audio('./music/meteorite-explosion.mp3');
                     newAudio.volume = 0.2;
@@ -71,18 +71,28 @@ export class Meteorite
 
                     await sleep(800);
 
-                    pictureMeteorite.classList.add('destroyed');
-                    meteorit.classList.add('destroyed');
+                    this.pictureMeteorite.classList.add('destroyed');
+                    this.meteorit.classList.add('destroyed');
                 
                     game.countOfDestroyed++;
                 }
             }
         });
 
-        meteorit.appendChild(pictureMeteorite);
-        meteorit.appendChild(healthBar);
+        this.meteorit.appendChild(this.pictureMeteorite);
+        this.meteorit.appendChild(this.healthBar);
 
-        document.body.appendChild(meteorit);
+        document.body.appendChild(this.meteorit);
+    }
+
+    pauseAnimation()
+    {
+        this.meteorit.style.animationPlayState = 'paused';
+    }
+
+    resumeAnimation()
+    {
+        this.meteorit.style.animationPlayState = 'running';
     }
 }
 

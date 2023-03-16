@@ -35,7 +35,7 @@ document.getElementById('id-pause-btn').addEventListener('click', event => {
     localStorage.setItem("IsPause", true);
 
     // Pause game
-    // game.pause();
+    game.pause();
 });
 document.getElementById('id-pause-back').addEventListener('click', event => {
     document.getElementById('pause-screen').style.display = 'none';
@@ -59,5 +59,5 @@ document.getElementById('id-pause-continue').addEventListener('click', event => 
     localStorage.setItem("IsPause", false);
 
     // Continue game
-    // game.continue();
+    game.continue();
 });

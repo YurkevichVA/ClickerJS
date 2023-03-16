@@ -21,19 +21,10 @@ export class Game
         this.currentLevel = window.currentSlot.level;
 
         this.isGameOver = false;                                             // Required to check whether player lose
+        this.isPause = false;                                                // Pause flag
+
+        this.level = null;
     }
-
-
-    /*
-    * Function that spawns the new meteorite
-    * health: health of meteorite
-    * damage: damage that the meteorite inflicts on the player
-    */
-    async spawnMeteorite(health, damage)
-    {
-        new Meteorite(health, damage);
-    }
-
 
     async showLevel()
     {
@@ -47,9 +38,6 @@ export class Game
 
     async gameLoop()
     {
-
-        let level = null;
-
         for(let i = this.currentLevel; i <= 10; i++)
         {
             console.log("level " + this.currentLevel);
@@ -60,52 +48,52 @@ export class Game
             {
                 case 1:
                 {
-                    level = new Level({delay: 2300, smallCount: 5, mediumCount: 0, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: 2300, smallCount: 5, mediumCount: 0, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 2:
                 {
-                    level = new Level({delay: 2200, smallCount: 5, mediumCount: 3, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: 2200, smallCount: 5, mediumCount: 3, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 3:
                 {
-                    level = new Level({delay: 2100, smallCount: 8, mediumCount: 5, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: 2100, smallCount: 8, mediumCount: 5, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 4:
                 {
-                    level = new Level({delay: 2000, smallCount: 5, mediumCount: 8, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: 2000, smallCount: 5, mediumCount: 8, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 5:
                 {
-                    level = new Level({delay: 1900, smallCount: 5, mediumCount: 3, largeCount: 1, bossCount: 0});
+                    this.level = new Level({delay: 1900, smallCount: 5, mediumCount: 3, largeCount: 1, bossCount: 0});
                     break;
                 }
                 case 6:
                 {
-                    level = new Level({delay: 1800, smallCount: 5, mediumCount: 5, largeCount: 3, bossCount: 0});
+                    this.level = new Level({delay: 1800, smallCount: 5, mediumCount: 5, largeCount: 3, bossCount: 0});
                     break;
                 }
                 case 7:
                 {
-                    level = new Level({delay: 1700, smallCount: 2, mediumCount: 6, largeCount: 5, bossCount: 0});
+                    this.level = new Level({delay: 1700, smallCount: 2, mediumCount: 6, largeCount: 5, bossCount: 0});
                     break;
                 }
                 case 8:
                 {
-                    level = new Level({delay: 1600, smallCount: 6, mediumCount: 5, largeCount: 7, bossCount: 0});
+                    this.level = new Level({delay: 1600, smallCount: 6, mediumCount: 5, largeCount: 7, bossCount: 0});
                     break;
                 }
                 case 9:
                 {
-                    level = new Level({delay: 1000, smallCount: 15, mediumCount: 0, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: 1000, smallCount: 15, mediumCount: 0, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 10:
                 {
-                    level = new Level({delay: 2000, smallCount: 2, mediumCount: 2, largeCount: 1, bossCount: 1});
+                    this.level = new Level({delay: 2000, smallCount: 2, mediumCount: 2, largeCount: 1, bossCount: 1});
                     break;
                 }
                 default:
@@ -115,9 +103,9 @@ export class Game
                 }
             }
 
-            console.log(level);
+            console.log(this.level);
 
-            await level.start();
+            await this.level.start();
 
             if(this.isGameOver)
                 return;
@@ -160,12 +148,24 @@ export class Game
 
     pause()
     {
-        // TO DO
+        if(this.level.meteoritesArr !== undefined)
+        {
+            this.level.meteoritesArr.forEach(element => {
+                element.pauseAnimation();
+            });
+        }
+        this.isPause = true;
     }
 
     continue()
     {
-        // TO DO
+        if(this.level.meteoritesArr !== undefined)
+        {
+            this.level.meteoritesArr.forEach(element => {
+                element.resumeAnimation();
+            });
+        }
+        this.isPause = false;
     }
 
     Win()
