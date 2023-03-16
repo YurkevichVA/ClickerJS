@@ -36,6 +36,13 @@ export class Meteorite
         this.meteorit.addEventListener('animationend', event => {
             if(this.isDestroyed) { return; }
             
+            if(this.hp === 20)
+                window.stats.smallDestroyed++;
+            else if(this.hp === 70)
+                window.stats.mediumDestroyed++;
+            else if(this.hp === 135)
+                window.stats.largeDestroyed++;
+
             this.isDestroyed = true;
             this.meteorit.classList.add('destroyed');
             window.player.getDamage(this.dmg);
@@ -57,10 +64,18 @@ export class Meteorite
             if(!this.isDestroyed)
             {
                 this.healthBar.value -= player.damage;
+                window.stats.shots++;
                 if (this.healthBar.value <= 0) 
                 {
                     this.isDestroyed = true;
                     
+                    if(this.hp === 20)
+                        window.stats.smallDestroyed++;
+                    else if(this.hp === 70)
+                        window.stats.mediumDestroyed++;
+                    else if(this.hp === 135)
+                        window.stats.largeDestroyed++;
+
                     this.healthBar.classList.add('destroyed');
 
                     this.pictureMeteorite.classList.add('destroy-pic');
