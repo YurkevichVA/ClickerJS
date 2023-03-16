@@ -39,7 +39,7 @@ document.getElementById('settings-id').addEventListener('click', event => {
 document.getElementById('id-pause-btn').addEventListener('click', event => {
     document.getElementById('pause-screen').style.display = 'flex';
     localStorage.setItem("IsPause", true);
-
+    
     // Pause game
     game.pause();
 });

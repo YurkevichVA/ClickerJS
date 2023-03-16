@@ -112,3 +112,13 @@ for (var i = 0 ; i < menu_items.length; i++) {
         newAudio.play();
     }, false);
 }
+document.getElementById('id-pause-btn').addEventListener('mouseover', event => {
+    const newAudio = new Audio('./music/hover-items-music.mp3');
+    newAudio.volume = 0.05;
+    newAudio.play();
+});
+document.getElementById('id-pause-btn').addEventListener('click', event => {
+    const newAudio = new Audio('./music/menu-click.mp3');
+    newAudio.volume = 0.5;
+    newAudio.play();
+});

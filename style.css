@@ -220,13 +220,6 @@ label.levelLabel
     margin-left: 15px;
     background-image: url(./images/pause.png);
 }
-.gb2 {
-    position: absolute;
-    z-index: 1;
-    top: 15px;
-    right: 15px;
-    background-image: url(./images/bulb_off.png);
-}
 .game-button:hover
 {
     cursor: url(./images/cursor_def.png), default;
@@ -243,10 +236,6 @@ label.levelLabel
 .gb1:active {
     margin-top: 17.5px;
     margin-left: 17.5px;
-}
-.gb2:active {
-    top: 17.5px;
-    right: 17.5px;
 }
 
 /*
@@ -417,4 +406,45 @@ label.levelLabel
 #id-pause-back      { background-image: url(./images/back_ico.png);     }
 #id-pause-settings  { background-image: url(./images/settings_ico.png); }
 #id-pause-shop      { background-image: url(./images/shop_ico.png);     }
+#id-pause-bulb      { background-image: url(./images/bulb_off.png);     }
 #id-pause-continue  { background-image: url(./images/continue_ico.png); }
+
+/*
+=======================================================
+---------------------BUBL-Screens----------------------
+=======================================================
+*/
+#bulb-screen
+{
+    cursor: url(../images/cursor_def.png), default;
+    z-index: 97;
+    /* display: flex; */
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.bulb-bg
+{
+    cursor: url(./images/cursor_def.png), default;
+
+    opacity: 0.7;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+
+    --s: 96px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+
+    background:
+      repeating-conic-gradient(from 30deg,#0000 0 120deg,var(--c3) 0 180deg) 
+       calc(.5*var(--s)) calc(.5*var(--s)*0.577),
+      repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
+      
+    background-size: var(--s) calc(var(--s)*0.577);
+}
