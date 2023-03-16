@@ -218,28 +218,21 @@ slot_three_import.addEventListener('click', e => {
     navigator.clipboard.readText().then(
         function(save)
         {
-            window.slots[2] = JSON.parse(save).then(
-                function() {
-                    localStorage.setItem('slots', JSON.stringify(window.slots));
-                    let temp = window.slots[2].date_and_time;
-                    if(typeof temp !== String)
-                    {
-                        temp = (new Date(String(temp))).toISOString();
-                    }
-                    labels[2].textContent = 
-                        temp.charAt(8) + temp.charAt(9) + "." +
-                        temp.charAt(5) + temp.charAt(6) + "." +
-                        temp.charAt(0) + temp.charAt(1) + temp.charAt(2) + temp.charAt(3) + "\n" +
-                        temp.charAt(11) + temp.charAt(12) + ":" +
-                        temp.charAt(14) + temp.charAt(15);
-                    slot_three_delete.disabled = false;
-                    slot_three_export.disabled = false;
-                },
-                function()
-                {
-                    importErr();
-                }
-            )
+            window.slots[2] = JSON.parse(save);
+            localStorage.setItem('slots', JSON.stringify(window.slots));
+            let temp = window.slots[2].date_and_time;
+            if(typeof temp !== String)
+            {
+                temp = (new Date(String(temp))).toISOString();
+            }
+            labels[2].textContent = 
+            temp.charAt(8) + temp.charAt(9) + "." +
+            temp.charAt(5) + temp.charAt(6) + "." +
+            temp.charAt(0) + temp.charAt(1) + temp.charAt(2) + temp.charAt(3) + "\n" +
+            temp.charAt(11) + temp.charAt(12) + ":" +
+            temp.charAt(14) + temp.charAt(15);
+            slot_three_delete.disabled = false;
+            slot_three_export.disabled = false;
         }
     )
 });
