@@ -43,16 +43,19 @@
                     <label id="slot-one-label" class="slot-label">SLOT 1</label>
                     <button id="start-slot-one" class="slot-button start-button">START</button>
                     <button id="delete-slot-one" class="slot-button delete-button" disabled>DELETE</button>
+                    <label id="slot-isempty-label1" class="slot-label">Empty</label>
                 </div>
                 <div id="slot-two" class="save-slot">
                     <label id="slot-two-label" class="slot-label">SLOT 2</label>
                     <button id="start-slot-two" class="slot-button start-button">START</button>
                     <button id="delete-slot-two" class="slot-button delete-button" disabled>DELETE</button>
+                    <label id="slot-isempty-label2" class="slot-label">Empty</label>
                 </div>
                 <div id="slot-three" class="save-slot">
                     <label id="slot-three-label" class="slot-label">SLOT 3</label>
                     <button id="start-slot-three" class="slot-button start-button">START</button>
                     <button id="delete-slot-three" class="slot-button delete-button" disabled>DELETE</button>
+                    <label id="slot-isempty-label3" class="slot-label">Empty</label>
                 </div>
             </div>
         </div>
@@ -163,7 +166,6 @@
     <div id="screen">
         <div id="i-game">
             <input id="id-pause-btn" class="game-button gb1" type="button" value="">
-            <input id="id-bulb-btn"  class="game-button gb2" type="button" value="">
             <div>
                 <input id="id-super-shot" class="game-items gi1" type="button" value="">
                 <label for="id-super-shot" class="lable-key key-w">W</label>
@@ -203,10 +205,16 @@
             <input id="id-pause-back"     type="button" class="pause-button" value="">
             <input id="id-pause-settings" type="button" class="pause-button" value="">
             <input id="id-pause-shop"     type="button" class="pause-button" value="">
+            <input id="id-pause-bulb"     type="button" class="pause-button" value="">
             <input id="id-pause-continue" type="button" class="pause-button" value="">
         </div>
     </div>
     
+    <!-- GAME-BUBL -->
+    <div id="bulb-screen">
+        <div class="bulb-bg"></div>
+    </div>
+
 </body>
     <script src="./scripts/load-settings.js" type="module"></script>
     <script src="./main.js" type="module"></script>
