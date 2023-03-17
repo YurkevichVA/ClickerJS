@@ -119,23 +119,6 @@ document.getElementById('theme3').addEventListener('click', event => {
     localStorage.setItem("theme-bg", "url('./images/game-bg3.png')");
 });
 
-
-//---------------------THEMES-----------------------//
-document.getElementById('theme1').addEventListener('click', event => {
-    document.getElementById('screen').style.backgroundImage = "url('./images/game-bg.png')";
-    localStorage.setItem("theme-bg", "url('./images/game-bg.png')");
-});
-document.getElementById('theme2').addEventListener('click', event => {
-    document.getElementById('screen').style.backgroundImage = "url('./images/game-bg2.png')";
-    localStorage.setItem("theme-bg", "url('./images/game-bg2.png')");
-});
-document.getElementById('theme3').addEventListener('click', event => {
-    document.getElementById('screen').style.backgroundImage = "url('./images/game-bg3.png')";
-    localStorage.setItem("theme-bg", "url('./images/game-bg3.png')");
-});
-
-
-
 // Game
 var rad = document.getElementsByName('r2');
 for (var i = 0; i < rad.length; i++) {
