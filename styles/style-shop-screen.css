@@ -85,13 +85,44 @@
     color: rgba(202, 202, 202, 0.6);
     text-shadow: rgb(156, 31, 31) 1px 1px 20px;
 }
+/*--------------Shop-Section--------------*/
+.shop-section {
+    cursor: url(../images/cursor_def.png), default;
+    display: flexbox;
+}
+.shop-section button
+{
+    cursor: url(../images/cursor_def.png), default;
+    font-size: 16pt;
+    font-family: 'Righteous';
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+.shop-section button:hover
+{
+    font-size: 19pt;
+    color: rgba(224, 224, 224, 0.6);
+    text-shadow: rgb(235, 38, 38) 1px 1px 10px;
+}
+.shop-section button:active
+{
+    font-size: 17pt;
+    color: rgba(202, 202, 202, 0.6);
+    text-shadow: rgb(156, 31, 31) 1px 1px 20px;
+}
+#shop-section-abilities-id {
+    margin-left: 195px;
+}
+#shop-section-energy-id {
+    color: rgba(255, 255, 255, 0.8);
+}
 
 /*---------------shop-items---------------*/
-#shop-item-energy {
-    border-radius: 20px;
-    background-color: #1d1d1d;
-}
-#shop-item-shield {
+#shop-item-energy, #shop-item-shield, 
+#shop-item-damage1, #shop-item-damage2, #shop-item-damage3,
+#shop-item-super-shot, #shop-item-total-shot {
     border-radius: 20px;
     background-color: #1d1d1d;
 }
@@ -120,30 +151,40 @@
     font-size: 14pt;
     font-family: 'Tilt Neon';
 }
-.shop-item-energy-img
+.shop-img
 {
     height: 48px;
     width: 55px;
     margin: 9px;
-    background-size: 60% 60%;
     background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-image: url(../images/shop-item-energy-img.png);
-    background-color:#3c3c3c;
-    border-radius: 17px;
-}
-.shop-item-shield-img
-{
-    height: 48px;
-    width: 55px;
-    margin: 9px;
     background-size: 80% 80%;
-    background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-image: url(../images/shop-item-shield-img.png);
     background-color:#3c3c3c;
     border-radius: 17px;
 }
+.shop-item-energy-img {
+    background-size: 60% 60%;
+    background-image: url(../images/shop-item-energy-img.png);
+}
+.shop-item-shield-img {
+    background-image: url(../images/shop-item-shield-img.png);
+}
+.shop-item-super-shot-img {
+    background-image: url(../images/super-shot-img.png);
+}
+.shop-item-total-shot-img {
+    background-image: url(../images/total-shot-img.png);
+}
+.shop-item-damage1-img {
+    background-image: url(../images/shop-item-damage1-img.png);
+}
+.shop-item-damage2-img {
+    background-image: url(../images/shop-item-damage2-img.png);
+}
+.shop-item-damage3-img {
+    background-image: url(../images/shop-item-damage3-img.png);
+}
+
 .price-shop-item
 {
     height: 32px;
@@ -161,21 +202,27 @@
 {
     display: inline-flex;
     height: 65px;
-    width: 95%;
     margin: 10px;
-    margin-top: 80px;
+    margin-right: 0px;
     margin-bottom: 20px;
-    font-size: 26pt;
+    font-size: 16pt;
     font-family: 'Righteous';
     color: rgba(255, 255, 255, 0.6);
 }
 #id-count-stars
 {
-    height: 32px;
-    width: 70px;
-    padding: 8px;
-    text-align: center;
+    display: flex;
+    position: absolute;
+    height: 40px;
+    width: 90px;
+    left: 15px;
+    bottom: 20px;
+    padding-top: 8px;
+    
     font-size: 16pt;
+    text-align: center;
+    justify-content: center;
+    
     background-color: #3c3c3c;
     border-radius: 17px;
 }
@@ -184,7 +231,7 @@
     display: inline-flex;
     position: absolute;
     font-size: 20pt;
-    right: 20px;
+    right: 5px;
     bottom: 20px;
 }
 .ico-energy {
@@ -200,8 +247,58 @@
     
     height: 35px;
     width: 35px;
-    margin-right: 10px;
+    margin-right: 5px;
     background-image: url(../images/shop-item-shield-img.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+.ico-super-shot {
+    
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    background-image: url(../images/super-shot-img.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.ico-total-shot {
+    
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    background-image: url(../images/total-shot-img.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.ico-damage {
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+    background-image: url(../images/ico-damage.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* ---------------------------------------------- */
+#id-section-energy {
+    display: block;
+}
+#id-section-damage {
+    display: none;
+}
+#id-section-abilities {
+    display: none;
+}
+
+#id-have-items-energy {
+    display: flex;
+}
+#id-have-items-damage {
+    display: none;    
+}
+#id-have-items-abilities {
+    display: none;
+}
+
+/* ---------------------------------------------- */

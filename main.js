@@ -2,7 +2,6 @@ import { setSlotsView } from "./scripts/play-screen.js";
 
 //localStorage.clear();
 
-
 // Button on load screen
 document.getElementById('button-load').addEventListener('click', event => {
     document.getElementById('load-screen').style.display = 'none';

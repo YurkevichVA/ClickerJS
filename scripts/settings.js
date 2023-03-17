@@ -104,3 +104,18 @@ document.getElementById('id-general-sound').addEventListener('change', event => 
     localStorage.setItem('settings-general-sound', document.getElementById('id-general-sound').checked);
 });
 //--------shooting-in-sound.js-(mousedown)----------//
+
+//---------------------THEMES-----------------------//
+document.getElementById('theme1').addEventListener('click', event => {
+    document.getElementById('screen').style.backgroundImage = "url('./images/game-bg.png')";
+    localStorage.setItem("theme-bg", "url('./images/game-bg.png')");
+});
+document.getElementById('theme2').addEventListener('click', event => {
+    document.getElementById('screen').style.backgroundImage = "url('./images/game-bg2.png')";
+    localStorage.setItem("theme-bg", "url('./images/game-bg2.png')");
+});
+document.getElementById('theme3').addEventListener('click', event => {
+    document.getElementById('screen').style.backgroundImage = "url('./images/game-bg3.png')";
+    localStorage.setItem("theme-bg", "url('./images/game-bg3.png')");
+});
+

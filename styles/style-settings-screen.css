@@ -193,3 +193,9 @@
     background-color: #920d0d;
     background-position: 16px;
 }
+
+/*------------Select-Theme-------------*/
+#game-set-id
+{
+    font-size: 17pt;
+}
