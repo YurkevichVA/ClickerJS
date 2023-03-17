@@ -1,18 +1,44 @@
-.winScreen {
+#win-screen {
     cursor: url(./images/aim1.png) 50 50, default;
-    width: 100%;
-    height: 100%;
     position: absolute;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.575);
     z-index: 1;
     display: none;
+    animation: gameOver-anim 2s linear forwards;
 }
 
-label.winScreen {
+.win-label {
     cursor: url(./images/aim1.png) 50 50, default;
     font-family: 'Righteous';
-    animation: gameOver-anim 2s linear forwards;
+    
+}
+
+.statistic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.stat-label {
+    font-family: 'Righteous';
+    color: rgba(255, 255, 255, 0);
+    animation: stats-appers 2s linear forwards;
+}
+
+@keyframes stats-appers {
+    0% {
+        
+    }
+    100% {
+        font-size: 30pt;
+        color: rgba(255, 255, 255, 0.5);
+    }
 }

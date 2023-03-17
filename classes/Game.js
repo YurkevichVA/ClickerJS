@@ -4,8 +4,9 @@ import {sleep} from "../functions/sleep.js";
 
 // Get HTML elements
 const gameOverScreen = document.getElementById("gameOverScreen");   // Element that shows "game over" message
-const winScreen = document.getElementById("winScreen");             // Element that appears when player finish last level
-const winLable = winScreen.children[0];
+const winScreen = document.getElementById("win-screen");             // Element that appears when player finish last level
+const winLable = document.getElementById("win-label"); 
+const statsContainer = document.getElementsByClassName("statistic-container"); 
 const levelLabel = document.getElementById("levelLabel");           // General element that shows level number before level started
 const levelLabelText = document.getElementById("textLevelLabel");   // Label that contains text with level number
 
@@ -41,6 +42,8 @@ export class Game
         for(let i = this.currentLevel; i <= 10; i++)
         {
             console.log("level " + this.currentLevel);
+
+            this.currentLevel = 10;
 
             await this.showLevel();
 
@@ -113,8 +116,7 @@ export class Game
 
             if(this.currentLevel === 10)
             {
-                winScreen.style.display = "flex";
-                winLable.style.display = "flex";
+                this.win();
                 return;
             }
 
@@ -137,6 +139,10 @@ export class Game
         window.slots[window.currentSlotIndex].level = this.currentLevel;
         window.slots[window.currentSlotIndex].player_hp = window.player.health;
         window.slots[window.currentSlotIndex].date_and_time = new Date();
+        window.slots[window.currentSlotIndex].shots = window.stats.shots;
+        window.slots[window.currentSlotIndex].smallDestroyed = window.stats.smallDestroyed;
+        window.slots[window.currentSlotIndex].mediumDestroyed = window.stats.mediumDestroyed;
+        window.slots[window.currentSlotIndex].largeDestroyed = window.stats.largeDestroyed;
 
         localStorage.setItem('slots', JSON.stringify(window.slots));
     }
@@ -174,9 +180,13 @@ export class Game
         this.level = null;
     }
 
-    Win()
+    win()
     {
-        // TO DO
+        winScreen.style.display = 'flex';
+        statsContainer[0].children[0].textContent += window.stats.shots;
+        statsContainer[0].children[1].textContent += window.stats.smallDestroyed;
+        statsContainer[0].children[2].textContent += window.stats.mediumDestroyed;
+        statsContainer[0].children[3].textContent += window.stats.largeDestroyed;
     }
 }
 
