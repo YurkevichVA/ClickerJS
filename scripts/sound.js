@@ -98,6 +98,19 @@ for (var i = 0 ; i < menu_items.length; i++) {
         newAudio.play();
     }, false);
 }
+menu_items = document.getElementById('shop-screen').getElementsByTagName('button');
+for (var i = 0 ; i < menu_items.length; i++) {
+    menu_items[i].addEventListener('click', event => {
+        const newAudio = new Audio('./music/menu-click.mp3');
+        newAudio.volume = 0.5;
+        newAudio.play();
+    });
+    menu_items[i].addEventListener('mouseover', event => {
+        const newAudio = new Audio('./music/hover-items-music.mp3');
+        newAudio.volume = 0.05;
+        newAudio.play();
+    });
+}
 //----------------------Pause-Screen---------------------//
 menu_items = document.getElementById('pause-screen').getElementsByTagName('input');
 for (var i = 0 ; i < menu_items.length; i++) {

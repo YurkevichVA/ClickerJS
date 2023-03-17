@@ -30,7 +30,7 @@
             <a id="play-id">Play</a>
             <a id="shop-id">Shop</a>
             <a id="settings-id">Settings</a>
-            <a id="exit-id">Exit</a>
+            <a id="exit-id" href="https://www.google.com">Exit</a>
         </div>
     </div>
     <!-- PLAY -->
@@ -68,28 +68,85 @@
         <div class="shop-bg"></div>
         <div class="shop-container">
             <div class="shop-items">
-                <a id="shop-back-id">⇦</a>
-                <a id="shop-item-energy">
-                    <div class="shop-item-energy-img"></div>
-                    <label class="title-shop-item cursor-pointer">Energy</label>
-                    <label class="deco-shop-item cursor-pointer">|</label>
-                    <label class="text-shop-item cursor-pointer">| restores 10 units of energy</label>
-                    <div id="id-price-energy" class="price-shop-item">10⭐</div>
-                </a>
-                <a id="shop-item-shield">
-                    <div class="shop-item-shield-img"></div>
-                    <label class="title-shop-item cursor-pointer">Shield</label>
-                    <label class="deco-shop-item cursor-pointer">|</label>
-                    <label class="text-shop-item cursor-pointer">| protects for 5 seconds</label>
-                    <div id="id-price-shield" class="price-shop-item">15⭐</div>
-                </a>
+                <div class="shop-section">
+                    <a id="shop-back-id">⇦</a>
+                    <button id="shop-section-abilities-id">Abilities</button>
+                    <button id="shop-section-damage-id">Damage</button>
+                    <button id="shop-section-energy-id">Energy</button>
+                </div>
+                <div id="id-section-energy">
+                    <a id="shop-item-energy">
+                        <div class="shop-img shop-item-energy-img"></div>
+                        <label class="title-shop-item cursor-pointer">Energy</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| restores 10 units of energy</label>
+                        <div id="id-price-energy" class="price-shop-item">10⭐</div>
+                    </a>
+                    <a id="shop-item-shield">
+                        <div class="shop-img shop-item-shield-img"></div>
+                        <label class="title-shop-item cursor-pointer">Shield</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| protects for 5 seconds</label>
+                        <div id="id-price-shield" class="price-shop-item">15⭐</div>
+                    </a>
+                </div>
+                <div id="id-section-damage">
+                    <a id="shop-item-damage1">
+                        <div class="shop-img shop-item-damage1-img"></div>
+                        <label class="title-shop-item cursor-pointer">Low</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| upgrade laser power by 1</label>
+                        <div id="id-price-damage1" class="price-shop-item">50⭐</div>
+                    </a>
+                    <a id="shop-item-damage2">
+                        <div class="shop-img shop-item-damage2-img"></div>
+                        <label class="title-shop-item cursor-pointer">Medium</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| upgrade laser power by 5</label>
+                        <div id="id-price-damage2" class="price-shop-item">75⭐</div>
+                    </a>
+                    <a id="shop-item-damage3">
+                        <div class="shop-img shop-item-damage3-img"></div>
+                        <label class="title-shop-item cursor-pointer">High</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| upgrade laser power by 10</label>
+                        <div id="id-price-damage3" class="price-shop-item">100⭐</div>
+                    </a>
+                </div>
+                <div id="id-section-abilities">
+                    <a id="shop-item-super-shot">
+                        <div class="shop-img shop-item-super-shot-img"></div>
+                        <label class="title-shop-item cursor-pointer">Super</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| destroy any meteorite sml</label>
+                        <div id="id-price-super-shot" class="price-shop-item">50⭐</div>
+                    </a>
+                    <a id="shop-item-total-shot">
+                        <div class="shop-img shop-item-total-shot-img"></div>
+                        <label class="title-shop-item cursor-pointer">Total</label>
+                        <label class="deco-shop-item cursor-pointer">|</label>
+                        <label class="text-shop-item cursor-pointer">| destroy all meteorites sml</label>
+                        <div id="id-price-total-shot" class="price-shop-item">150⭐</div>
+                    </a>
+                </div>
+
                 <div class="container-have-items">
                     <div id="id-count-stars">0⭐</div>
-                    <div class="container-have-shop-items">
+                    <div id="id-have-items-energy" class="container-have-shop-items">
                         <label id="id-have-energy" class="cursor-def">0x</label>
                         <div class="ico-energy"></div>
                         <label id="id-have-shield" class="cursor-def">0x</label>
                         <div class="ico-shield"></div>
+                    </div>
+                    <div id="id-have-items-damage" class="container-have-shop-items">
+                        <label id="id-have-damage" class="cursor-def">0</label>
+                        <div class="ico-damage"></div>
+                    </div>
+                    <div id="id-have-items-abilities" class="container-have-shop-items">
+                        <label id="id-have-super-shot" class="cursor-def">0x</label>
+                        <div class="ico-super-shot"></div>
+                        <label id="id-have-total-shot" class="cursor-def">0x</label>
+                        <div class="ico-total-shot"></div>
                     </div>
                 </div>
             </div>
@@ -147,6 +204,17 @@
                         <input class="cursor-pointer" type="button" value="RESTART">
                     </div>
                     <div>
+                        <label class="cursor-def">Select theme : </label>
+                        <div>
+                            <input class="cursor-def" id="theme1" name="theme" type="radio" checked>
+                            <label class="cursor-def" for="theme1">Theme 1</label>
+                            <input class="cursor-def" id="theme2" name="theme" type="radio">
+                            <label class="cursor-def" for="theme2">Theme 2</label>
+                            <input class="cursor-def" id="theme3" name="theme" type="radio">
+                            <label class="cursor-def" for="theme3">Theme 3</label>
+                        </div>
+                    </div>
+                    <!-- <div>
                         <label class="cursor-def">Difficulty mode : </label>
                         <div>
                             <input class="cursor-pointer" id="r2-1" name="r2" type="radio" value="2300" checked>
@@ -154,7 +222,7 @@
                             <input class="cursor-pointer" id="r2-2" name="r2" type="radio" value="2000">
                             <label class="cursor-pointer" for="r2-2">Hard</label>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- ...export/import ... -->
                 </div>
             </div>
