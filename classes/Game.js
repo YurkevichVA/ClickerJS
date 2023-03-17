@@ -25,6 +25,19 @@ export class Game
         this.isPause = false;                                                // Pause flag
 
         this.level = null;
+
+        var ele = document.getElementsByName('r2');
+
+        this.difficulty = ele[0].checked? 'normal' : 'hard';
+
+        if(this.difficulty === 'normal')
+        {
+            this.baseDelay = 2300;
+        }
+        else
+        {
+            this.baseDelay = 2000;
+        }
     }
 
     async showLevel()
@@ -43,7 +56,9 @@ export class Game
         {
             console.log("level " + this.currentLevel);
 
-            this.currentLevel = 10;
+            console.log(this.difficulty + " " + this.baseDelay);
+
+            //this.currentLevel = 10;
 
             await this.showLevel();
 
@@ -51,52 +66,52 @@ export class Game
             {
                 case 1:
                 {
-                    this.level = new Level({delay: 2300, smallCount: 5, mediumCount: 0, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay, smallCount: 5, mediumCount: 0, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 2:
                 {
-                    this.level = new Level({delay: 2200, smallCount: 5, mediumCount: 3, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 100, smallCount: 5, mediumCount: 3, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 3:
                 {
-                    this.level = new Level({delay: 2100, smallCount: 8, mediumCount: 5, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 200, smallCount: 8, mediumCount: 5, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 4:
                 {
-                    this.level = new Level({delay: 2000, smallCount: 5, mediumCount: 8, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 300, smallCount: 5, mediumCount: 8, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 5:
                 {
-                    this.level = new Level({delay: 1900, smallCount: 5, mediumCount: 3, largeCount: 1, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 400, smallCount: 5, mediumCount: 3, largeCount: 1, bossCount: 0});
                     break;
                 }
                 case 6:
                 {
-                    this.level = new Level({delay: 1800, smallCount: 5, mediumCount: 5, largeCount: 3, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 500, smallCount: 5, mediumCount: 5, largeCount: 3, bossCount: 0});
                     break;
                 }
                 case 7:
                 {
-                    this.level = new Level({delay: 1700, smallCount: 2, mediumCount: 6, largeCount: 5, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 600, smallCount: 2, mediumCount: 6, largeCount: 5, bossCount: 0});
                     break;
                 }
                 case 8:
                 {
-                    this.level = new Level({delay: 1600, smallCount: 6, mediumCount: 5, largeCount: 7, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 700, smallCount: 6, mediumCount: 5, largeCount: 7, bossCount: 0});
                     break;
                 }
                 case 9:
                 {
-                    this.level = new Level({delay: 1000, smallCount: 15, mediumCount: 0, largeCount: 0, bossCount: 0});
+                    this.level = new Level({delay: this.baseDelay - 1000, smallCount: 15, mediumCount: 0, largeCount: 0, bossCount: 0});
                     break;
                 }
                 case 10:
                 {
-                    this.level = new Level({delay: 2000, smallCount: 2, mediumCount: 2, largeCount: 1, bossCount: 1});
+                    this.level = new Level({delay: this.baseDelay - 200, smallCount: 2, mediumCount: 2, largeCount: 1, bossCount: 1});
                     break;
                 }
                 default:

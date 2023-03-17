@@ -104,3 +104,16 @@ document.getElementById('id-general-sound').addEventListener('change', event => 
     localStorage.setItem('settings-general-sound', document.getElementById('id-general-sound').checked);
 });
 //--------shooting-in-sound.js-(mousedown)----------//
+
+
+// Game
+var rad = document.getElementsByName('r2');
+for (var i = 0; i < rad.length; i++) {
+    rad[i].addEventListener('change', function() {
+        (window.game.baseDelay) ? console.log(window.game.baseDelay): null;
+        if (this.value !== window.game.baseDelay) {
+            window.game.baseDelay = this.value;
+        }
+        console.log(this.value)
+    });
+}
