@@ -376,7 +376,7 @@ label.levelLabel
 .pause-button
 {
     cursor: url(./images/cursor_def.png), default;
-
+    position:relative;
     opacity: 0.6;
     height: 120px;
     width: 120px;
@@ -395,7 +395,6 @@ label.levelLabel
     transition: all 1s cubic-bezier(0.22, 1, 0.22, 1); 
 }
 .pause-button:hover {
-    cursor: url(./images/cursor_def.png), default;
     opacity: 1;
     outline-offset: 5px;
 }

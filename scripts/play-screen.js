@@ -1,6 +1,6 @@
 import { SaveSlot } from "../classes/SaveSlot.js";
 import { Game } from "../classes/Game.js";
-import { Spaceship} from "../classes/Spaceship.js";
+import { Spaceship } from "../classes/Spaceship.js";
 import { Stats } from "../classes/Statistic.js";
 
 // Starts the game

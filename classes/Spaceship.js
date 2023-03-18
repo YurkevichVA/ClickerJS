@@ -17,6 +17,16 @@ export class Spaceship
             console.log("game over");
         }
     }
+
+    getLowHeal = function (heal) {
+        this.health += heal;
+        this.healthBar.value = this.health;
+    }
+
+    setFullHeal = function () {
+        this.health = 200;
+        this.healthBar.value = this.health;
+    }
 }
 
 export default Spaceship;
