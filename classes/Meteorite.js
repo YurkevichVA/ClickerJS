@@ -63,7 +63,8 @@ export class Meteorite
         this.pictureMeteorite.style.height = config.size + "px";
         this.pictureMeteorite.classList.add('meteorit-pic');
         this.pictureMeteorite.addEventListener('mousedown', async event => {
-            this.getDamage(player.damage);
+            window.player.makeDamage(this);
+            //this.getDamage(player.damage);
         });
 
         this.meteorit.appendChild(this.pictureMeteorite);

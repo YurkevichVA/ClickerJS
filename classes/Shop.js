@@ -10,7 +10,7 @@
         // ITEMS
         this.countEnergy = 0;
         this.countFullEnergy = 0;
-        this.countSuperShot = 0;
+        this.countSuperShot = 99;
         this.countTotalShot = 99;
 
         this.lableEnergy = window.document.getElementById("id-energy-item");
@@ -62,7 +62,7 @@
     }
 
     useSuperShot = function () {
-
+        window.player.isSuperShot = true;
     }
 
     useTotalShot = function () 

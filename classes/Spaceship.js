@@ -6,6 +6,7 @@ export class Spaceship
         this.damage = 15;
         this.healthBar = window.document.getElementById("playerHealthbar");
         this.healthBar.value = this.health;
+        this.isSuperShot = false;
     }
  
     getDamage = function (dmg) {
@@ -15,6 +16,19 @@ export class Spaceship
         {
             game.gameOver();
             console.log("game over");
+        }
+    }
+
+    makeDamage = function(meteor) {
+        if(this.isSuperShot)
+        {
+            meteor.getDamage(meteor.hp);
+            this.isSuperShot = false;
+        }
+        else
+        {
+            // Calculate damage
+            meteor.getDamage(this.damage);
         }
     }
 }
