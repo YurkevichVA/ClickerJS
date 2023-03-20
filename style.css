@@ -3,6 +3,7 @@ body
     padding: 0;
     margin: 0;
     scroll-behavior: none;
+    overflow: hidden;
     cursor: url(./images/aim1.png) 50 50, default;
 }
 ::selection
@@ -282,7 +283,7 @@ label.levelLabel
     bottom: 60px;
     left: calc(50% + 170px);
     background-size: 80% 80%;
-    background-image: url(./images/shop-item-shield-img.png);
+    background-image: url(./images/shop-item-fullenergy.png);
 }
 /*--------------------------------------------------*/
 .lable-key
@@ -334,6 +335,24 @@ label.levelLabel
     bottom: 50px;
     left: calc(50% + 160px + 60px);
 }
+/*----------------------MONEY-----------------------*/
+.money-container
+{
+    display: flex;
+    position: absolute;
+    height: 42px;
+    width: 130px;
+    left: 20px;
+    bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 22pt;
+    font-family: 'Righteous';
+    background-color: #3c3c3c;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+}
+/*--------------------------------------------------*/
 
 /*
 ======================================================
@@ -376,7 +395,7 @@ label.levelLabel
 .pause-button
 {
     cursor: url(./images/cursor_def.png), default;
-    position:relative;
+    position: relative;
     opacity: 0.6;
     height: 120px;
     width: 120px;
@@ -422,9 +441,9 @@ label.levelLabel
     position: absolute;
     height: 100vh;
     width: 100vw;
-    align-items: center;
+    /* align-items: center;
     justify-content: center;
-    pointer-events: none;
+    pointer-events: none; */
 }
 .bulb-bg
 {
@@ -446,4 +465,42 @@ label.levelLabel
       repeating-conic-gradient(from 30deg,var(--c1) 0 60deg,var(--c2) 0 120deg,var(--c3) 0 180deg);
       
     background-size: var(--s) calc(var(--s)*0.577);
+}
+.hint
+{
+    cursor: url(./images/cursor_def.png), default;
+    opacity: 1;
+    position: absolute;
+    height: 850px;
+    width: 1500px;
+    top: calc(50% - 425px);
+    left: calc(50% - 750px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(./images/bulb_bg.png);
+}
+#bulb-back-id
+{
+    cursor: url(./images/cursor_def.png), default;
+    display: inline-flex;
+    position: absolute;
+    margin-left: 16px;
+    font-size: 60pt;
+    font-family: 'Righteous';
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 1s cubic-bezier(0.22, 1, 0.22, 1);
+}
+#bulb-back-id:hover
+{
+    cursor: url(./images/cursor_def.png), default;
+    margin-top: -5px;
+    font-size: 65pt;
+    color: rgba(255, 255, 255, 1);
+}
+#bulb-back-id:active
+{
+    cursor: url(./images/cursor_def.png), default;
+    margin-top: -3px;
+    font-size: 62pt;
+    color: rgba(255, 255, 255, 0.8);
 }

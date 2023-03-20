@@ -22,12 +22,25 @@ for (var i = 0 ; i < shop_items.length; i++) {
     }
     else if (shop_items[i].id === 'shop-item-energy') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            // alert(window.player.getMoney());
+            // alert(document.getElementById('id-price-energy').value);
+            // if (window.player.getMoney() >= document.getElementById('id-price-energy').value) {
+            //     alert("!");
+            // }
+            // window.player.addLowHeal();
+
+
+
+
+
         });
     }
     else if (shop_items[i].id === 'shop-item-shield') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            // window.player.addFullHeal();
+
+
+
         });
     }
     else if (shop_items[i].id === 'shop-item-damage1') {

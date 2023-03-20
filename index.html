@@ -82,14 +82,20 @@
                         <label class="title-shop-item cursor-pointer">Energy</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
                         <label class="text-shop-item cursor-pointer">| restores 10 units of energy</label>
-                        <div id="id-price-energy" class="price-shop-item">10⭐</div>
+                        <div class="price-shop-item">
+                            <label id="id-price-energy">10</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                     <a id="shop-item-shield">
                         <div class="shop-img shop-item-shield-img"></div>
-                        <label class="title-shop-item cursor-pointer">Shield</label>
+                        <label class="title-shop-item cursor-pointer">Full-E</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
-                        <label class="text-shop-item cursor-pointer">| protects for 5 seconds</label>
-                        <div id="id-price-shield" class="price-shop-item">15⭐</div>
+                        <label class="text-shop-item cursor-pointer">| restores all energy</label>
+                        <div class="price-shop-item">
+                            <label id="id-price-shield">50</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                 </div>
                 <div id="id-section-damage">
@@ -98,21 +104,30 @@
                         <label class="title-shop-item cursor-pointer">Low</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
                         <label class="text-shop-item cursor-pointer">| upgrade laser power by 1</label>
-                        <div id="id-price-damage1" class="price-shop-item">50⭐</div>
+                        <div class="price-shop-item">
+                            <label id="id-price-damage1">50</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                     <a id="shop-item-damage2">
                         <div class="shop-img shop-item-damage2-img"></div>
                         <label class="title-shop-item cursor-pointer">Medium</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
                         <label class="text-shop-item cursor-pointer">| upgrade laser power by 5</label>
-                        <div id="id-price-damage2" class="price-shop-item">75⭐</div>
+                        <div class="price-shop-item">
+                            <label id="id-price-damage2">75</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                     <a id="shop-item-damage3">
                         <div class="shop-img shop-item-damage3-img"></div>
                         <label class="title-shop-item cursor-pointer">High</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
                         <label class="text-shop-item cursor-pointer">| upgrade laser power by 10</label>
-                        <div id="id-price-damage3" class="price-shop-item">100⭐</div>
+                        <div class="price-shop-item">
+                            <label id="id-price-damage3">100</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                 </div>
                 <div id="id-section-abilities">
@@ -121,14 +136,20 @@
                         <label class="title-shop-item cursor-pointer">Super</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
                         <label class="text-shop-item cursor-pointer">| destroy any meteorite sml</label>
-                        <div id="id-price-super-shot" class="price-shop-item">50⭐</div>
+                        <div class="price-shop-item">
+                            <label id="id-price-super-shot">50</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                     <a id="shop-item-total-shot">
                         <div class="shop-img shop-item-total-shot-img"></div>
                         <label class="title-shop-item cursor-pointer">Total</label>
                         <label class="deco-shop-item cursor-pointer">|</label>
                         <label class="text-shop-item cursor-pointer">| destroy all meteorites sml</label>
-                        <div id="id-price-total-shot" class="price-shop-item">150⭐</div>
+                        <div class="price-shop-item">
+                            <label id="id-price-total-shot">150</label>
+                            <label>⭐</label>
+                        </div>
                     </a>
                 </div>
 
@@ -201,10 +222,10 @@
                     </div>
                 </div>
                 <div id="game-set-id">
-                    <div>
+                    <!-- <div>
                         <label class="cursor-def">Reset game progress</label>
                         <input class="cursor-pointer" type="button" value="RESTART">
-                    </div>
+                    </div> -->
                     <div>
                         <label class="cursor-def">Difficulty mode : </label>
                         <div>
@@ -264,6 +285,10 @@
                 <label for="id-shield-item" class="lable-key key-s">S</label>
                 <label for="id-shield-item" class="lable-count count-shield-item">x99</label>
             </div>
+            <div class="money-container">
+                <label id="id-money">9999</label>
+                <label>⭐</label>
+            </div>
         </div>
         <div id="id_spaceship" class="spaceship">
             <progress id="playerHealthbar" class="progress" max="200" value="200"></progress>
@@ -291,6 +316,8 @@
     <!-- GAME-BUBL -->
     <div id="bulb-screen">
         <div class="bulb-bg"></div>
+        <div class="hint"></div>
+        <a id="bulb-back-id">⇦</a>
     </div>
 
 </body>

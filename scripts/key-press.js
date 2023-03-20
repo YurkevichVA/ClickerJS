@@ -4,11 +4,11 @@ document.addEventListener('keypress', event => {
     if (localStorage.getItem('IsPause') === 'true') { return; }
 
     if (event.code === 'KeyE') {
-        window.player.getLowHeal(10);
+        window.player.useLowHeal(10);
         alert("E");
     }
     else if (event.code === 'KeyS') {
-        window.player.setFullHeal();
+        window.player.useFullHeal();
         alert("S");
     }
     else if (event.code === 'KeyW') {

@@ -31,7 +31,8 @@ export class Meteorite
         this.meteorit.style.alignContent = "center";
         this.meteorit.style.alignItems = "center";
         this.meteorit.style.gap = "15px";
-        this.meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(0.46, 0.03, 0.52, 0.96)";
+        this.meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(.37,.63,.62,.45)";
+        // this.meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(0.46, 0.03, 0.52, 0.96)";
         this.meteorit.style.filter = `brightness(${document.getElementById('id-brightness').value}%)`;   // set brightness
         this.meteorit.addEventListener('animationend', event => {
             if(this.isDestroyed) { return; }
@@ -65,6 +66,7 @@ export class Meteorite
             {
                 this.healthBar.value -= player.damage;
                 window.stats.shots++;
+                window.player.setMoney(1);
                 if (this.healthBar.value <= 0) 
                 {
                     this.isDestroyed = true;
@@ -90,6 +92,7 @@ export class Meteorite
                     this.meteorit.classList.add('destroyed');
                 
                     game.countOfDestroyed++;
+                    window.player.setMoney(10);
                 }
             }
         });

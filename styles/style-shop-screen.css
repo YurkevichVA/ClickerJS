@@ -167,7 +167,8 @@
     background-image: url(../images/shop-item-energy-img.png);
 }
 .shop-item-shield-img {
-    background-image: url(../images/shop-item-shield-img.png);
+    background-size: 60% 60%;
+    background-image: url(../images/shop-item-fullenergy.png);
 }
 .shop-item-super-shot-img {
     background-image: url(../images/super-shot-img.png);
@@ -187,12 +188,12 @@
 
 .price-shop-item
 {
-    height: 32px;
-    width: 70px;
+    height: 29px;
+    width: 75px;
     margin: 9px;
-    padding: 8px;
+    padding: 9.5px;
     text-align: center;
-    font-size: 16pt;
+    font-size: 14pt;
     background-color: #3c3c3c;
     border-radius: 17px;
 }
@@ -248,7 +249,7 @@
     height: 35px;
     width: 35px;
     margin-right: 5px;
-    background-image: url(../images/shop-item-shield-img.png);
+    background-image: url(../images/shop-item-fullenergy.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

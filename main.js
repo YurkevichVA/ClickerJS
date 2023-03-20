@@ -60,6 +60,14 @@ document.getElementById('id-pause-shop').addEventListener('click', event => {
     document.getElementById('pause-screen').style.display = 'none';
     document.getElementById('shop-screen').style.display = 'block';
 });
+document.getElementById('id-pause-bulb').addEventListener('click', event => {
+    document.getElementById('pause-screen').style.display = 'none';
+    document.getElementById('bulb-screen').style.display = 'block';
+});
+document.getElementById('bulb-back-id').addEventListener('click', event => {
+    document.getElementById('bulb-screen').style.display = 'none';
+    document.getElementById('pause-screen').style.display = 'flex';
+});
 document.getElementById('id-pause-continue').addEventListener('click', event => {
     document.getElementById('pause-screen').style.display = 'none';
     localStorage.setItem("IsPause", false);

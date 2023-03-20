@@ -10,7 +10,7 @@
 }
 .menu-gamename
 {
-    cursor: pointer;
+    cursor: url(../images/cursor_def.png), default;
     position: absolute;
     width: 100vw;
     margin-top: 5vh;
