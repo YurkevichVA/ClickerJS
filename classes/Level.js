@@ -17,22 +17,22 @@ export class Level
 
     spawnSmall()
     {
-        return new Meteorite({hp: 20, dmg: 20, speed: 5, size: 100});
+        return new Meteorite({hp: 20, dmg: 20, speed: 5, size: 100, reward: 1});
     }
 
     spawnMedium()
     {
-        return new Meteorite({hp: 70, dmg: 45, speed: 8, size: 150});
+        return new Meteorite({hp: 70, dmg: 45, speed: 8, size: 150, reward: 5});
     }
 
     spawnLarge()
     {
-        return new Meteorite({hp: 135, dmg: 100, speed: 9, size: 200});
+        return new Meteorite({hp: 135, dmg: 100, speed: 9, size: 200, reward: 15});
     }
 
     spawnBoss()
     {
-        return new Meteorite({hp: 500, dmg: 300, speed: 11, size: 600});
+        return new Meteorite({hp: 500, dmg: 300, speed: 11, size: 600, reward: 50});
     }
 
 

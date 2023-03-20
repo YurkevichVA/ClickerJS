@@ -8,6 +8,7 @@ export class Meteorite
         this.hp = config.hp;
         this.dmg = config.dmg;
         this.speed = config.speed;
+        this.reward = config.reward;
 
         // Is destroyed false at start
         this.isDestroyed = false;
@@ -66,7 +67,6 @@ export class Meteorite
             {
                 this.healthBar.value -= player.damage;
                 window.stats.shots++;
-                window.player.setMoney(1);
                 if (this.healthBar.value <= 0) 
                 {
                     this.isDestroyed = true;
@@ -92,7 +92,7 @@ export class Meteorite
                     this.meteorit.classList.add('destroyed');
                 
                     game.countOfDestroyed++;
-                    window.player.setMoney(10);
+                    window.game.shop.setMoney(this.reward);
                 }
             }
         });

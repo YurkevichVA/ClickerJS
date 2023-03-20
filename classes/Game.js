@@ -1,4 +1,5 @@
 import {Meteorite} from "./Meteorite.js";
+import { Shop } from "./Shop.js";
 import {Level} from "./Level.js";
 import {sleep} from "../functions/sleep.js";
 
@@ -26,18 +27,11 @@ export class Game
 
         this.level = null;
 
+        this.shop = new Shop();
+
         var ele = document.getElementsByName('r2');
 
-        this.difficulty = ele[0].checked? 'normal' : 'hard';
-
-        if(this.difficulty === 'normal')
-        {
-            this.baseDelay = 2300;
-        }
-        else
-        {
-            this.baseDelay = 2000;
-        }
+        this.baseDelay = ele[0].checked? 2300 : 2000;
     }
 
     async showLevel()
