@@ -29,6 +29,13 @@ export class Game
 
         this.shop = new Shop();
 
+        this.shop.countEnergy = window.currentSlot.countEnergy;
+        this.shop.countFullEnergy = window.currentSlot.countFullEnergy;
+        this.shop.countSuperShot = window.currentSlot.countSuperShot;
+        this.shop.countTotalShot = window.currentSlot.countTotalShot;
+        this.shop.money = window.currentSlot.money;
+        this.shop.updateUi();
+
         var ele = document.getElementsByName('r2');
 
         this.baseDelay = ele[0].checked? 2300 : 2000;
@@ -145,13 +152,23 @@ export class Game
 
     save()
     {
+        // game
         window.slots[window.currentSlotIndex].level = this.currentLevel;
         window.slots[window.currentSlotIndex].player_hp = window.player.health;
         window.slots[window.currentSlotIndex].date_and_time = new Date();
+        
+        // stats
         window.slots[window.currentSlotIndex].shots = window.stats.shots;
         window.slots[window.currentSlotIndex].smallDestroyed = window.stats.smallDestroyed;
         window.slots[window.currentSlotIndex].mediumDestroyed = window.stats.mediumDestroyed;
         window.slots[window.currentSlotIndex].largeDestroyed = window.stats.largeDestroyed;
+
+        // shop
+        window.slots[window.currentSlotIndex].countEnergy = window.game.shop.countEnergy;
+        window.slots[window.currentSlotIndex].countFullEnergy = window.game.shop.countFullEnergy;
+        window.slots[window.currentSlotIndex].countSuperShot = window.game.shop.countSuperShot;
+        window.slots[window.currentSlotIndex].countTotalShot = window.game.shop.countTotalShot;
+        window.slots[window.currentSlotIndex].money = window.game.shop.money;
 
         localStorage.setItem('slots', JSON.stringify(window.slots));
     }

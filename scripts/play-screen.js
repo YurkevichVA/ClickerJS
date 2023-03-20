@@ -8,8 +8,8 @@ import { Shop } from "../classes/Shop.js";
 function start()
 {
     // Set global variables
-    window.game = new Game();            // Game is an object that contains game loop and levels
     window.player = new Spaceship();     // Spaceship is an object that contains player health and damage
+    window.game = new Game();            // Game is an object that contains game loop and levels
     window.stats = new Stats();
     //window.shop = new Shop();
     

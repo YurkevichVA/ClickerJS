@@ -8,5 +8,12 @@ export class SaveSlot {
         this.smallDestroyed = 0;
         this.mediumDestroyed = 0;
         this.largeDestroyed = 0;
+
+        this.countEnergy = 4;
+        this.countFullEnergy = 3;
+        this.countSuperShot = 2;
+        this.countTotalShot = 1;
+
+        this.money = 0;
     }
 }

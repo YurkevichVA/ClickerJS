@@ -231,5 +231,11 @@
             }
         }
     }
-
+    updateUi = function () {
+        this.lableEnergy.textContent = 'x'+this.countEnergy;
+        this.lableFullEnergy.textContent = 'x'+this.countFullEnergy;
+        this.lableSuperShot.textContent = 'x'+this.countSuperShot;
+        this.lableTotalShot.textContent = 'x'+this.countTotalShot;
+        this.moneydisplay.textContent = this.money;
+    }
  }
