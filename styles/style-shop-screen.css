@@ -210,7 +210,10 @@
     font-family: 'Righteous';
     color: rgba(255, 255, 255, 0.6);
 }
-#id-count-stars
+/* #id-count-stars
+{
+} */
+.count-stars-container
 {
     display: flex;
     position: absolute;

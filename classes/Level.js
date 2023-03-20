@@ -84,7 +84,7 @@ export class Level
                     await sleep(1);
             }
 
-            if(this.bossCount > 0 && spawnedMeteorites == this.generalCount - 1)
+            if(this.bossCount > 0 && this.spawnedMeteorites == this.generalCount - 1)
             {
                 await sleep(this.delay);
                 this.meteoritesArr.push(this.spawnBoss());

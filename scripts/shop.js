@@ -1,8 +1,4 @@
 /*
- * * * * SHOP * * * *
-*/
-
-/*
 =======================================================
 --------------------------Shop-------------------------
 =======================================================
@@ -22,50 +18,37 @@ for (var i = 0 ; i < shop_items.length; i++) {
     }
     else if (shop_items[i].id === 'shop-item-energy') {
         shop_items[i].addEventListener('click', event => {
-            // alert(window.player.getMoney());
-            // alert(document.getElementById('id-price-energy').value);
-            // if (window.player.getMoney() >= document.getElementById('id-price-energy').value) {
-            //     alert("!");
-            // }
-            // window.player.addLowHeal();
-
-
-
-
-
+            window.game.shop.addLowHeal();
         });
     }
     else if (shop_items[i].id === 'shop-item-shield') {
         shop_items[i].addEventListener('click', event => {
-            // window.player.addFullHeal();
-
-
-
+            window.game.shop.addFullHeal();
         });
     }
     else if (shop_items[i].id === 'shop-item-damage1') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            window.game.shop.addDamage1();
         });
     }
     else if (shop_items[i].id === 'shop-item-damage2') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            window.game.shop.addDamage2();
         });
     }
     else if (shop_items[i].id === 'shop-item-damage3') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            window.game.shop.addDamage3();
         });
     }
     else if (shop_items[i].id === 'shop-item-super-shot') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            window.game.shop.addSuperShot();
         });
     }
     else if (shop_items[i].id === 'shop-item-total-shot') {
         shop_items[i].addEventListener('click', event => {
-            // ...
+            window.game.shop.addTotalShot();
         });
     }
 }

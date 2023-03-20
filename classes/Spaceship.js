@@ -8,6 +8,12 @@ export class Spaceship
         this.healthBar.value = this.health;
         this.isSuperShot = false;
     }
+    getValueDamage = function () {
+        return this.damage;
+    }
+    setValueDamage = function (value) {
+        this.damage += value;
+    }
  
     getDamage = function (dmg) {
         this.health -= dmg;

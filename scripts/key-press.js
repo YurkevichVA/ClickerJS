@@ -1,15 +1,14 @@
-
 document.addEventListener('keypress', event => {
     if (document.getElementById('i-game').style.display !== 'block') { return; }
     if (localStorage.getItem('IsPause') === 'true') { return; }
 
     if (event.code === 'KeyE') {
-        window.player.useLowHeal(10);
-        alert("E");
+        window.game.shop.useLowHeal(10);
+        //alert("E");
     }
     else if (event.code === 'KeyS') {
-        window.player.useFullHeal();
-        alert("S");
+        window.game.shop.useFullHeal();
+        //alert("S");
     }
     else if (event.code === 'KeyW') {
         window.game.shop.useSuperShot();

@@ -30,7 +30,6 @@
         <div class="menu-gamename">SpaceClick</div>
         <div id="menu-items" class="menu-items">
             <a id="play-id">Play</a>
-            <a id="shop-id">Shop</a>
             <a id="settings-id">Settings</a>
             <a id="exit-id" href="https://www.google.com">Exit</a>
         </div>
@@ -154,7 +153,10 @@
                 </div>
 
                 <div class="container-have-items">
-                    <div id="id-count-stars">0⭐</div>
+                    <div class="count-stars-container">
+                        <label id="id-count-stars">0</label>
+                        <label>⭐</label>
+                    </div>
                     <div id="id-have-items-energy" class="container-have-shop-items">
                         <label id="id-have-energy" class="cursor-def">0x</label>
                         <div class="ico-energy"></div>
@@ -268,22 +270,22 @@
             <div>
                 <input id="id-super-shot" class="game-items gi1" type="button" value="">
                 <label for="id-super-shot" class="lable-key key-w">W</label>
-                <label for="id-super-shot" class="lable-count count-super-shot">x99</label>
+                <label id="id-c-ss-W" for="id-super-shot" class="lable-count count-super-shot">x99</label>
             </div>
             <div>
                 <input id="id-total-shot" class="game-items gi2" type="button" value="">
                 <label for="id-total-shot" class="lable-key key-q">Q</label>
-                <label for="id-total-shot" class="lable-count count-total-shot">x99</label>
+                <label id="id-c-ts-Q" for="id-total-shot" class="lable-count count-total-shot">x99</label>
             </div>
             <div>
                 <input id="id-energy-item" class="game-items gi3" type="button" value="">
                 <label for="id-energy-item" class="lable-key key-e">E</label>
-                <label for="id-energy-item" class="lable-count count-energy-item">x99</label>
+                <label id="id-c-es-E" for="id-energy-item" class="lable-count count-energy-item">x99</label>
             </div>
             <div>
                 <input id="id-shield-item" class="game-items gi4" type="button" value="">
                 <label for="id-shield-item" class="lable-key key-s">S</label>
-                <label for="id-shield-item" class="lable-count count-shield-item">x99</label>
+                <label id="id-c-ss-S" for="id-shield-item" class="lable-count count-shield-item">x99</label>
             </div>
             <div class="money-container">
                 <label id="id-money">9999</label>
