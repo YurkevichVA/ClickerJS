@@ -38,14 +38,14 @@ export class Level
 
     async start()
     {
-        let spawnedMeteorites = 0;
+        this.spawnedMeteorites = 0;
 
-        while(spawnedMeteorites != this.generalCount)
+        while(this.spawnedMeteorites != this.generalCount)
         {
             if(this.smallCount > 0)
             {
                 this.meteoritesArr.push(this.spawnSmall());
-                spawnedMeteorites++;
+                this.spawnedMeteorites++;
                 this.smallCount--;
                 await sleep(generateRandom(this.delay - 600, this.delay));
             }
@@ -59,7 +59,7 @@ export class Level
             if(this.mediumCount > 0)
             {
                 this.meteoritesArr.push(this.spawnMedium());
-                spawnedMeteorites++;
+                this.spawnedMeteorites++;
                 this.mediumCount--;
                 await sleep(generateRandom(this.delay - 600, this.delay + 100));
             }
@@ -73,7 +73,7 @@ export class Level
             if(this.largeCount > 0)
             {
                 this.meteoritesArr.push(this.spawnLarge());
-                spawnedMeteorites++;
+                this.spawnedMeteorites++;
                 this.largeCount--;
                 await sleep(generateRandom(this.delay - 500, this.delay + 200));
             }
@@ -88,7 +88,7 @@ export class Level
             {
                 await sleep(this.delay);
                 this.meteoritesArr.push(this.spawnBoss());
-                spawnedMeteorites++;
+                this.spawnedMeteorites++;
                 this.bossCount--;
             }
         }
@@ -98,5 +98,12 @@ export class Level
             await sleep(1);
         }
         
+    }
+
+    totalShot()
+    {
+        this.meteoritesArr.forEach(element => {
+            element.getDamage(element.hp);
+        });
     }
 }

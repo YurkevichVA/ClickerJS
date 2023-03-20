@@ -63,38 +63,7 @@ export class Meteorite
         this.pictureMeteorite.style.height = config.size + "px";
         this.pictureMeteorite.classList.add('meteorit-pic');
         this.pictureMeteorite.addEventListener('mousedown', async event => {
-            if(!this.isDestroyed)
-            {
-                this.healthBar.value -= player.damage;
-                window.stats.shots++;
-                if (this.healthBar.value <= 0) 
-                {
-                    this.isDestroyed = true;
-                    
-                    if(this.hp === 20)
-                        window.stats.smallDestroyed++;
-                    else if(this.hp === 70)
-                        window.stats.mediumDestroyed++;
-                    else if(this.hp === 135)
-                        window.stats.largeDestroyed++;
-
-                    this.healthBar.classList.add('destroyed');
-
-                    this.pictureMeteorite.classList.add('destroy-pic');
-
-                    const newAudio = new Audio('./music/meteorite-explosion.mp3');
-                    newAudio.volume = 0.2;
-                    newAudio.play();
-
-                    await sleep(800);
-
-                    this.pictureMeteorite.classList.add('destroyed');
-                    this.meteorit.classList.add('destroyed');
-                
-                    game.countOfDestroyed++;
-                    window.game.shop.setMoney(this.reward);
-                }
-            }
+            this.getDamage(player.damage);
         });
 
         this.meteorit.appendChild(this.pictureMeteorite);
@@ -111,6 +80,42 @@ export class Meteorite
     resumeAnimation()
     {
         this.meteorit.style.animationPlayState = 'running';
+    }
+
+    async getDamage(value)
+    {
+        if(!this.isDestroyed)
+        {
+            this.healthBar.value -= value;
+            window.stats.shots++;
+            if (this.healthBar.value <= 0) 
+            {
+                this.isDestroyed = true;
+
+                if(this.hp === 20)
+                    window.stats.smallDestroyed++;
+                else if(this.hp === 70)
+                    window.stats.mediumDestroyed++;
+                else if(this.hp === 135)
+                    window.stats.largeDestroyed++;
+
+                this.healthBar.classList.add('destroyed');
+
+                this.pictureMeteorite.classList.add('destroy-pic');
+                
+                const newAudio = new Audio('./music/meteorite-explosion.mp3');
+                newAudio.volume = 0.2;
+                newAudio.play();
+
+                await sleep(800);
+
+                this.pictureMeteorite.classList.add('destroyed');
+                this.meteorit.classList.add('destroyed');
+            
+                game.countOfDestroyed++;
+                window.game.shop.setMoney(this.reward);
+            }
+        }
     }
 
     destroy()

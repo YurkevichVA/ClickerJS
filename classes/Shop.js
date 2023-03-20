@@ -11,7 +11,7 @@
         this.countEnergy = 0;
         this.countFullEnergy = 0;
         this.countSuperShot = 0;
-        this.countTotalShot = 0;
+        this.countTotalShot = 99;
 
         this.lableEnergy = window.document.getElementById("id-energy-item");
         this.lableFullEnergy = window.document.getElementById("id-shield-item");
@@ -65,7 +65,12 @@
 
     }
 
-    useTotalShot = function () {
-        
+    useTotalShot = function () 
+    {
+        if(this.countTotalShot > 0)
+        {
+            this.countTotalShot--;
+            window.game.level.totalShot();
+        }    
     }
  }

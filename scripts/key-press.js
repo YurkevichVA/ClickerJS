@@ -16,7 +16,7 @@ document.addEventListener('keypress', event => {
         alert("W");
     }
     else if (event.code === 'KeyQ') {
-    
-        alert("Q");
+        window.game.shop.useTotalShot();
+        //alert("Q");
     }
 });
