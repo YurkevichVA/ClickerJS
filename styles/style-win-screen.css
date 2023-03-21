@@ -1,5 +1,5 @@
 #win-screen {
-    cursor: url(./images/aim1.png) 50 50, default;
+    cursor: url(./images/cursor_def.png), default;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -11,32 +11,32 @@
     z-index: 1;
     display: none;
     animation: gameOver-anim 2s linear forwards;
+    pointer-events: none;
 }
 
 .win-label {
-    cursor: url(./images/aim1.png) 50 50, default;
+    cursor: url(./images/cursor_def.png), default;
     font-family: 'Righteous';
     
 }
 
 .statistic-container {
+    cursor: url(./images/cursor_def.png), default;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 .stat-label {
+    cursor: url(./images/cursor_def.png), default;
     font-family: 'Righteous';
     color: rgba(255, 255, 255, 0);
     animation: stats-appers 2s linear forwards;
 }
 
 @keyframes stats-appers {
-    0% {
-        
-    }
+    0% { }
     100% {
         font-size: 30pt;
         color: rgba(255, 255, 255, 0.5);

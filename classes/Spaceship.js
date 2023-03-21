@@ -3,7 +3,7 @@ export class Spaceship
     constructor()
     {
         this.health = window.currentSlot.player_hp;
-        this.damage = 15;
+        this.damage = window.currentSlot.player_damage;
         this.healthBar = window.document.getElementById("playerHealthbar");
         this.healthBar.value = this.health;
         this.isSuperShot = false;

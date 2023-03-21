@@ -2,7 +2,6 @@ import { SaveSlot } from "../classes/SaveSlot.js";
 import { Game } from "../classes/Game.js";
 import { Spaceship } from "../classes/Spaceship.js";
 import { Stats } from "../classes/Statistic.js";
-import { Shop } from "../classes/Shop.js";
 
 // Starts the game
 function start()
@@ -11,7 +10,6 @@ function start()
     window.player = new Spaceship();     // Spaceship is an object that contains player health and damage
     window.game = new Game();            // Game is an object that contains game loop and levels
     window.stats = new Stats();
-    //window.shop = new Shop();
     
     // Hide elements
     document.getElementById('load-save-screen').style.display = 'none';

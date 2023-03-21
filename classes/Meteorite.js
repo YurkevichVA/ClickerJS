@@ -9,6 +9,7 @@ export class Meteorite
         this.dmg = config.dmg;
         this.speed = config.speed;
         this.reward = config.reward;
+        this.progressbar = config.progressbar;
 
         // Is destroyed false at start
         this.isDestroyed = false;
@@ -33,7 +34,6 @@ export class Meteorite
         this.meteorit.style.alignItems = "center";
         this.meteorit.style.gap = "15px";
         this.meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(.37,.63,.62,.45)";
-        // this.meteorit.style.animation = "meteorit-anim " + this.speed + "s cubic-bezier(0.46, 0.03, 0.52, 0.96)";
         this.meteorit.style.filter = `brightness(${document.getElementById('id-brightness').value}%)`;   // set brightness
         this.meteorit.addEventListener('animationend', event => {
             if(this.isDestroyed) { return; }

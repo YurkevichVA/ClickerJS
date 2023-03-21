@@ -3,17 +3,17 @@
     constructor()
     {
         // MONEY
-        this.money = 0; // (!)
+        this.money = 0;
         this.moneydisplay = window.document.getElementById("id-money");
         this.moneydisplay.textContent = this.money;
         this.shophavemoneydisplay = window.document.getElementById("id-count-stars");
         this.shophavemoneydisplay.textContent = this.money;
         
         // ITEMS
-        this.countEnergy = 4;
-        this.countFullEnergy = 3;
-        this.countSuperShot = 2;
-        this.countTotalShot = 1;
+        this.countEnergy = 0;
+        this.countFullEnergy = 0;
+        this.countSuperShot = 0;
+        this.countTotalShot = 0;
 
         // I-GAME IN SCREEN
         this.lableEnergy = window.document.getElementById("id-c-es-E");
@@ -56,6 +56,7 @@
     setMoney = function (value) {
         this.money += value;
         this.moneydisplay.textContent = this.money;
+        this.shophavemoneydisplay.textContent = this.money;
     }
 
     improveDamage = function (value) {
@@ -236,6 +237,13 @@
         this.lableFullEnergy.textContent = 'x'+this.countFullEnergy;
         this.lableSuperShot.textContent = 'x'+this.countSuperShot;
         this.lableTotalShot.textContent = 'x'+this.countTotalShot;
+
+        this.lableEnergy_shopscr.textContent = this.countEnergy+'x';
+        this.lableFullEnergy_shopscr.textContent = this.countFullEnergy+'x';
+        this.lableSuperShot_shopscr.textContent = this.countSuperShot+'x';
+        this.lableTotalShot_shopscr.textContent = this.countTotalShot+'x';
+
         this.moneydisplay.textContent = this.money;
+        this.shophavemoneydisplay.textContent = this.money;
     }
- }
+}

@@ -74,7 +74,7 @@
     justify-content: center;
     width: 40%;
     height: 95%;
-    font-size: 30pt;
+    font-size: 20pt;
     border: 0px;
     border-radius: 25px;
     background-color: #1d1d1d;
@@ -86,7 +86,7 @@ label {
     cursor: url(../images/cursor_def.png), default;
 }
 .slot-label {
-    font-size: 25pt;
+    font-size: 20pt;
     text-align: center;
 }
 .save-slot:hover {

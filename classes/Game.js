@@ -38,7 +38,7 @@ export class Game
 
         var ele = document.getElementsByName('r2');
 
-        this.baseDelay = ele[0].checked? 2300 : 2000;
+        this.baseDelay = ele[0].checked? 2000 : 2300;
     }
 
     async showLevel()
@@ -155,6 +155,7 @@ export class Game
         // game
         window.slots[window.currentSlotIndex].level = this.currentLevel;
         window.slots[window.currentSlotIndex].player_hp = window.player.health;
+        window.slots[window.currentSlotIndex].player_damage = window.player.damage;
         window.slots[window.currentSlotIndex].date_and_time = new Date();
         
         // stats

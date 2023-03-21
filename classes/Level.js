@@ -49,7 +49,7 @@ export class Level
                 this.smallCount--;
                 await sleep(generateRandom(this.delay - 600, this.delay));
             }
-            
+
             if(window.game.isPause)
             {
                 while(window.game.isPause)
@@ -91,7 +91,7 @@ export class Level
                 this.spawnedMeteorites++;
                 this.bossCount--;
             }
-        }
+        }// 
 
         while(window.game.countOfDestroyed < this.generalCount || window.game.isGameOver)
         {

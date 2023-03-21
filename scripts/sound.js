@@ -10,6 +10,7 @@ document.addEventListener("mousedown", event => {
     if (document.getElementById('settings-screen').style.display !== 'none') { return; }
     if (document.getElementById('shop-screen').style.display !== 'none') { return; }
     if (document.getElementById('pause-screen').style.display !== 'none') { return; }
+    if (document.getElementById('load-save-screen').style.display !== 'none') { return; }
     const plasma_gun_audio = new Audio('./music/plasma_gun_03.mp3');
     plasma_gun_audio.volume = document.getElementById('id-shooting-sound').value/100.0;
     plasma_gun_audio.play();
@@ -131,6 +132,30 @@ document.getElementById('id-pause-btn').addEventListener('mouseover', event => {
     newAudio.play();
 });
 document.getElementById('id-pause-btn').addEventListener('click', event => {
+    const newAudio = new Audio('./music/menu-click.mp3');
+    newAudio.volume = 0.5;
+    newAudio.play();
+});
+//----------------------Play-Screen---------------------//
+menu_items = document.getElementById('load-save-screen').getElementsByTagName('button');
+for (var i = 0 ; i < menu_items.length; i++) {
+    menu_items[i].addEventListener('click', event => {
+        const newAudio = new Audio('./music/menu-click.mp3');
+        newAudio.volume = 0.5;
+        newAudio.play();
+    }, false);
+    menu_items[i].addEventListener('mouseover', event => {
+        const newAudio = new Audio('./music/hover-items-music.mp3');
+        newAudio.volume = 0.05;
+        newAudio.play();
+    }, false);
+}
+document.getElementById('play-back-id').addEventListener('mouseover', event => {
+    const newAudio = new Audio('./music/hover-items-music.mp3');
+    newAudio.volume = 0.05;
+    newAudio.play();
+});
+document.getElementById('play-back-id').addEventListener('click', event => {
     const newAudio = new Audio('./music/menu-click.mp3');
     newAudio.volume = 0.5;
     newAudio.play();

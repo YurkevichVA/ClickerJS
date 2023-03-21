@@ -19,11 +19,6 @@ document.getElementById('play-id').addEventListener('click', event => {
     document.getElementById('menu-screen').style.display = 'none';
     setSlotsView();
 });
-// //---------------------Shop-Btn---------------------//
-// document.getElementById('shop-id').addEventListener('click', event => {
-//     document.getElementById('shop-screen').style.display = 'block';
-//     document.getElementById('menu-screen').style.display = 'none';
-// });
 //-------------------Settings-Btn-------------------//
 document.getElementById('settings-id').addEventListener('click', event => {
     document.getElementById('settings-screen').style.display = 'block';
@@ -46,6 +41,10 @@ document.getElementById('id-pause-back').addEventListener('click', event => {
     document.getElementById('pause-screen').style.display = 'none';
     document.getElementById('i-game').style.display = 'none';
     document.getElementById('playerHealthbar').style.display = 'none';
+
+    document.getElementById("win-screen").style.display = 'none';
+    document.getElementById('gameOverScreen').style.display = 'none';
+
     document.getElementById('menu-screen').style.display = 'block';
     localStorage.setItem("IsPause", false);
     
