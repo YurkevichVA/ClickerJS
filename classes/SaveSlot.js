@@ -4,7 +4,7 @@ export class SaveSlot {
         this.level = 1;
         this.date_and_time = new Date();
         this.player_hp = 200;
-        this.player_damage = 5;
+        this.player_damage = 10;
         this.shots = 0;
         this.smallDestroyed = 0;
         this.mediumDestroyed = 0;

@@ -97,7 +97,7 @@
         if (Number(this.money) >= Number(this.FullEnergyPrice.textContent)) {
             this.countFullEnergy++;
             this.lableFullEnergy.textContent = 'x'+this.countFullEnergy;
-            this.lableFullEnergy_shopscr.textContent = this.countEnergy+'x';
+            this.lableFullEnergy_shopscr.textContent = this.countFullEnergy+'x';
 
             this.money -= Number(this.FullEnergyPrice.textContent);
             this.moneydisplay.textContent = this.money;
