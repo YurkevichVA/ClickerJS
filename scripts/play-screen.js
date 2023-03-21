@@ -16,6 +16,7 @@ function start()
     document.getElementById('menu-screen').style.display = 'none';
     document.getElementById('shop-screen').style.display = 'none';
     document.getElementById('settings-screen').style.display = 'none';
+    document.getElementById('pause-screen').style.display = 'none';
 
     // Show in-game ui
     document.getElementById('i-game').style.display = 'block';
